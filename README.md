@@ -1,5 +1,6 @@
+# Ahmmad Kaleem Bhatti
 # 💫 About Me:
-- 🔭 I’m currently working on strengthening my core CS fundamentals and building real‑world projects using modern web technologies.<br>- 🤝 I’m looking to collaborate on open‑source projects, beginner‑friendly hackathons, and any ideas that help me grow as a developer.<br>- 🤔 I’m looking for help with writing cleaner, production‑level code and learning best practices for scalable applications.<br>- 🌱 I’m currently learning Data Structures & Algorithms, Object Oriented Programming, and full‑stack development.<br>- 💬 Ask me about my learning journey in Computer Science, how I approach problem‑solving, and the projects I’m building.<br>- ⚡ Fun fact: I enjoy breaking complex problems into simple steps—and I rarely end a day without learning at least one new tech concept.
+- 🔭 CS Major building real‑world projects using modern web technologies.<br>- 🤝 I’m looking to collaborate on open‑source projects, beginner‑friendly hackathons, and any ideas that help me grow as a developer.<br>- 🤔 I’m looking for help with writing cleaner, production‑level code and learning best practices for scalable applications.<br>- 🌱 I’m currently learning Data Structures & Algorithms, ML in Artificial Intelligence, and app development.<br>- Aspiring NLP & Machine Learning Engineer | Python | Data Science | C++
 
 
 ## 🌐 Socials:
