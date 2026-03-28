@@ -1,153 +1,167 @@
+<div align="center">
+
 # Ahmad Kaleem Bhatti
 
-Computer Science undergraduate specializing in Python automation, desktop application development, eBay SEO & store management, and AI-integrated workflow tools. Building production-level solutions for real-world problems in e-commerce, data processing, and business automation.
+### Python Developer · eBay SEO Expert · Automation Builder
+
+*CS Undergraduate @ Air University, Islamabad · Freelancer · Builder of real-world tools*
+
+[![Fiverr](https://img.shields.io/badge/Fiverr-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://fiverr.com/ahmad_bhatti18)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AhmaadKaleeem)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ahmadkaleembhatti)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ahmadkaleeem1@gmail.com)
+
+</div>
 
 ---
 
 ## About
 
-- CS student at Air University, Islamabad (2024–2028)
-- Sales & Data Assistant at Atif E-Commerce Services — managing live eBay listings and store operations daily
-- Freelancer on Fiverr — Python GUI tools, Excel automation, eBay SEO, student projects
-- Building real tools used in live ecommerce workflows — not just academic projects
-- Experience in AI/LLM integration, web scraping, and n8n automation pipelines
+CS student at Air University, Islamabad (2024–2028) building production-level Python tools used in live e-commerce workflows. I focus on automation, clean interfaces, and systems that eliminate manual work.
+
+- Active freelancer on Fiverr — Python GUI apps, Excel automation, eBay SEO
+- Real work experience managing and SEO ranking eBay store listings daily
+- Built tools handling 1000+ row datasets, multi-account workflows, and AI-powered pipelines
+- Delivered projects from desktop apps to full property marketplaces with AI moderation
 
 ---
 
-## Core Skills
+## Tech Stack
 
-### Primary
-- Python (Tkinter, CustomTkinter, PyQt) — GUI desktop application development
-- Excel automation (openpyxl, pandas) — data processing and reporting
-- Executable packaging (.exe via PyInstaller)
-- eBay listing creation, SEO optimization, and search ranking
-- eBay account and store management — daily live operations
+### Core
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Tkinter](https://img.shields.io/badge/Tkinter-FF6F00?style=for-the-badge&logo=python&logoColor=white)
+![PyQt](https://img.shields.io/badge/PyQt-41CD52?style=for-the-badge&logo=python&logoColor=white)
+![CustomTkinter](https://img.shields.io/badge/CustomTkinter-1565C0?style=for-the-badge&logo=python&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![openpyxl](https://img.shields.io/badge/openpyxl-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)
+![PyInstaller](https://img.shields.io/badge/PyInstaller-000000?style=for-the-badge&logo=python&logoColor=white)
 
-### Secondary
-- n8n automation workflows and webhook integrations
-- AI/LLM integration (OpenRouter, Gemini)
-- Web scraping (Selenium, anti-bot handling, perceptual hashing)
-- HTML5, CSS3, JavaScript — responsive UI development
-- Chrome extension development (JS + AI integration)
-- Flutter (basic — cross-platform)
+### Automation & AI
+![n8n](https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white)
+![OpenRouter](https://img.shields.io/badge/OpenRouter-FF6B35?style=for-the-badge&logo=openai&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude-8B5CF6?style=for-the-badge&logo=anthropic&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
 
-### Academic / Freelance
-- C++ — OOP, DSA, file handling, linked lists, trees, recursion
-- C — fundamentals
-- Dart — basic
-- Frontend development projects (HTML/CSS/JS)
+### Web & Frontend
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 
----
+### Academic & Foundations
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 
-## Professional Experience
-
-**Sales & Data Assistant**
-Atif E-Commerce Services, Islamabad
-Feb 2026 – Present
-
-- Creating and SEO optimizing eBay product listings for top search ranking
-- Managing eBay store operations, account workflows, and listing pipelines daily
-- Built Python automation tools replacing manual Excel workflows internally
-- Handling product data, SKU management, and operational data processing
-- Applying natural eBay SEO ranking strategies — real results on live store
+### E-Commerce
+![eBay](https://img.shields.io/badge/eBay_SEO-E53238?style=for-the-badge&logo=ebay&logoColor=white)
+![Amazon](https://img.shields.io/badge/Amazon_Tools-FF9900?style=for-the-badge&logo=amazon&logoColor=black)
 
 ---
 
-## Freelance Services (Fiverr: ahmad_bhatti18)
+## Services
 
-| Service | Stack |
-|---|---|
-| Python GUI Desktop Tools & Excel Automation | Python, Tkinter, CustomTkinter, openpyxl |
-| eBay Listing Creation & SEO Ranking | eBay SEO, Keyword Research, Store Management |
-| C++, Python & Frontend Student Projects | C++, Python, HTML, CSS, JS |
-| Python Script to Desktop App Conversion | Python, CustomTkinter, PyInstaller |
-| AI Chatbot Development | Python, OpenRouter, Gemini |
+| Service | Stack | Starting At |
+|---|---|---|
+| Python GUI Desktop Tools | Tkinter, CustomTkinter, PyInstaller | $25 |
+| Excel Automation & Data Processing | pandas, openpyxl | $25 |
+| eBay Listing Creation & SEO Ranking | eBay SEO, Keyword Strategy | $10 |
+| AI Chatbots (WhatsApp, Web, Desktop) | Python, OpenRouter, Gemini | $35 |
+| Student Projects (C++, Python, Frontend) | C++, Python, HTML/CSS/JS | $10 |
 
 ---
 
-## Real Projects
+## Selected Projects
 
-**Amazon Multi-Account Restock Merger**
+### Amazon Multi-Account Restock Merger
 `Python` `CustomTkinter` `openpyxl`
-- 8-step GUI workflow handling multi-account sales and stock data
-- Auto-detects SKU/ASIN columns across different file formats
-- Calculates restock quantities using custom formula
-- FBA vs FBM detection by SKU prefix
-- Exports clean 4-sheet Excel report with colour-coded formatting
+
+8-step GUI workflow for Amazon seller restock management across multiple accounts.
+
+- Auto-detects SKU/ASIN column formats across varied file structures
+- Calculates recommended restock quantities using a custom formula
+- Distinguishes FBA vs FBM SKUs by prefix detection
+- Exports clean 4-sheet Excel reports with colour-coded data
+- Reduced hours of manual cross-account analysis to a single click
 
 ---
 
-**eBay Bulk Listing Generator**
+### eBay Bulk Listing Generator
 `Python` `HTML` `DOCX` `JSON`
-- Generates optimized bulk eBay listings from structured JSON input
-- Outputs per-product HTML and DOCX files with dark-style responsive template
-- Includes JSON sanitiser for AI-generated input handling
-- Built for Sellvera UK / Your Home Partner branding
+
+Generates SEO-structured eBay listings at scale from JSON input.
+
+- Produces HTML and DOCX outputs with consistent branded templates
+- Built-in JSON sanitiser for AI-generated input handling
+- Designed for scalable bulk listing workflows in live store operations
 
 ---
 
-**eBay Image Scraper**
-`Selenium` `Perceptual Hashing` `Chrome`
-- Scrapes and deduplicates product images with perceptual hash filtering
-- Cloudflare bypass via headless Chrome with anti-bot handling
-- Multi-size image fallback and auto session recovery every 50 listings
-- Handles bot detection and Chrome crash recovery automatically
-
----
-
-**Keepa Monitor — BSR Tracker**
-`Python` `openpyxl` `Excel`
-- Tracks BSR data across multiple Amazon ASINs automatically
-- Writes to Excel with conditional formatting (green/red/amber by BSR value)
-- Session Summary sheet with per-ASIN overview and LOOKUP trend formula
-
----
-
-**SKU Cleanup Tool**
+### Keepa Monitor — BSR Tracker
 `Python` `openpyxl`
+
+Tracks Amazon product BSR data across multiple ASINs with automated Excel reporting.
+
+- Conditional formatting with green/red/amber rules for BSR values
+- Session Summary sheet with per-ASIN overview
+- Custom LOOKUP trend formula for historical analysis
+
+---
+
+### SKU Cleanup Tool
+`Python` `openpyxl`
+
+Pattern-based SKU cleaning and standardisation for large ecommerce datasets.
+
 - Strips quantity prefixes (8pk, 20pk) and trailing variant suffixes
-- Targets UM-prefixed SKUs with precise regex logic
-- Processes 1000+ product rows instantly — zero manual work
+- Processes 1000+ rows instantly with zero manual intervention
+- Targets UM-prefixed SKUs with configurable rule sets
 
 ---
 
-**Chrome Extension: Amazon → eBay Lister**
-`JavaScript` `OpenRouter` `Gemini AI`
-- Scrapes Amazon product data and generates eBay UK listings via AI
-- OpenRouter + Gemini integration with 4-tab JSON-driven interface
-- Handles CSP violations, image processing, and AI response formatting
+### Chrome Extension: Amazon → eBay Lister
+`JavaScript` `OpenRouter` `Gemini`
+
+Browser extension that converts Amazon product data into eBay-ready listings using AI.
+
+- LLM-based content generation via OpenRouter + Gemini
+- 4-tab UI with JSON-driven listing management
+- Handles CSP restrictions and dynamic image loading
 
 ---
 
-**PakLand — Property Marketplace**
+### PakLand — Property Marketplace
 `Flutter` `n8n` `OpenRouter`
-- Full cross-platform property listing marketplace
-- n8n + OpenRouter LLM pipeline for AI-powered ad content moderation
-- Auto-approves or flags seller listings with no manual review required
+
+Cross-platform property marketplace with an AI-powered ad moderation pipeline.
+
+- n8n + OpenRouter LLM pipeline auto-approves or flags seller listings
+- No manual review required — fully automated moderation
+- Scalable architecture for listing and user management
 
 ---
 
 ## Education
 
 **Bachelor of Computer Science**
-Air University, Islamabad
-2024 – 2028
+Air University, Islamabad · 2024 – 2028
 
 ---
 
 ## Certifications
 
-- Object-Oriented Data Structures in C++ — University of Illinois
-- CS50x Introduction to Programming with Python — Harvard University
-- Fundamentals of Generative AI — Microsoft
+- Object-Oriented Data Structures in C++ — *University of Illinois*
+- CS50x Introduction to Programming with Python — *Harvard University*
+- Fundamentals of Generative AI — *Microsoft*
 
 ---
 
-## Links
+<div align="center">
 
-- **Fiverr:** [fiverr.com/ahmad_bhatti18](https://fiverr.com/ahmad_bhatti18)
-- **GitHub:** [github.com/AhmaadKaleeem](https://github.com/AhmaadKaleeem)
-- **LinkedIn:** [linkedin.com/in/ahmadkaleembhatti](https://linkedin.com/in/ahmadkaleembhatti)
-- **Email:** ahmadkaleeem1@gmail.com
+*Open to freelance projects · Fast response · Real delivery*
 
----
+[![Fiverr](https://img.shields.io/badge/Hire_Me_on_Fiverr-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://fiverr.com/ahmad_bhatti18)
+
+</div>
