@@ -1,25 +1,104 @@
 # Ahmad Kaleem Bhatti
-# 💫 About Me
 
-- 🔭 CS Major building real‑world projects using modern web technologies.  
-- 🤝 I’m looking to collaborate on open‑source projects, beginner‑friendly hackathons, and any ideas that excite me.  
-- 🤔 I’m looking for help with writing cleaner, production‑level code and learning best practices for scalable applications.  
-- 🌱 I’m currently learning Data Structures & Algorithms, ML in Artificial Intelligence, and app development.  
+## About Me
 
-✨ **Aspiring NLP & Machine Learning Engineer | Python | Data Science | C++**
+Computer Science major focused on building real-world systems and practical solutions. I combine software engineering, data analysis, and machine learning fundamentals to create efficient, scalable, and user-focused applications.
 
+Currently developing a strong foundation in Machine Learning, with hands-on implementation of regression models and gradient descent, while also building production-style projects across web, mobile, and data domains.
 
-## 🌐 Socials:
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/_ahmadkaleem) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/ahmadkaleembhatti) [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?logo=Reddit&logoColor=white)](https://reddit.com/user/sirusxx) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:ahmadkaleeem1@gmail.com) 
-
-# 💻 Tech Stack:
-![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase) ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Apache](https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white) ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
-# 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=AhmaadKaleeem&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=AhmaadKaleeem&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=AhmaadKaleeem&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
+Aspiring Machine Learning Engineer | Python | AI | Data Science | C++
 
 ---
-[![](https://visitcount.itsvg.in/api?id=AhmaadKaleeem&icon=0&color=0)](https://visitcount.itsvg.in)
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+## Current Focus
+
+- Machine Learning fundamentals (Regression, Cost Functions, Gradient Descent)
+- Data Structures and Algorithms for problem solving
+- Real-world project development (AI, automation, and full-stack systems)
+- Writing clean, maintainable, and production-level code
+
+---
+
+## Technical Skills
+
+**Languages:**  
+C++, Python, JavaScript, Dart, SQL, HTML, CSS  
+
+**Frameworks & Technologies:**  
+Flutter, Firebase, Node.js  
+
+**Data & Analysis:**  
+Pandas, NumPy, Matplotlib, Microsoft Excel, OpenPyXL  
+
+**Tools & Platforms:**  
+Git, GitHub, MySQL, Apache, Amazon Seller Central, eBay, Adobe Photoshop  
+
+---
+
+## Experience
+
+**Sales & Data Assistant — Atif E-Commerce Services (Islamabad)**  
+Feb 2026 – Present  
+
+- Managed and maintained Excel-based data systems for stock, pricing, and tracking  
+- Handled Amazon and eBay account operations including listings and monitoring  
+- Generated AI-based product images for listings  
+- Provided customer support and handled email communication  
+- Ensured smooth day-to-day e-commerce operations  
+
+---
+
+## Projects
+
+**Banking Management System (C++)**  
+- Secure account system with authentication, transactions, and account management  
+- Features include deposits, withdrawals, transfers, and transaction history  
+
+**Deforestation vs Temperature Analysis (Python)**  
+- Analyzed climate and tree-loss datasets (1901–2016) using Pandas  
+- Identified seasonal patterns and long-term environmental trends  
+
+**Hostel Management System (Web)**  
+- Full-stack system with role-based access (Admin, Warden, Student)  
+- Features include registration, room allocation, payments, and complaint handling  
+
+**Pakistan Digital Elections System**  
+- Dual-mode system (CLI + Web) for secure voting  
+- Includes CNIC validation, real-time vote counting, and blockchain-style verification  
+
+**Pak Land Property Marketplace (Flutter + Firebase)**  
+- Cross-platform marketplace for property listings  
+- Features include AI moderation, booking system, geolocation, and trust scoring  
+
+---
+
+## Education
+
+**Bachelor of Computer Science — Air University**  
+2024 – 2028  
+
+---
+
+## Certifications
+
+- Object-Oriented Data Structures in C++ — University of Illinois (Coursera)  
+- CS50x Introduction to Programming with Python — Harvard (edX)  
+- Fundamentals of Generative AI — Microsoft Learn  
+
+---
+
+## Links
+
+- GitHub: https://github.com/AhmaadKaleeem  
+- LinkedIn: https://linkedin.com/in/ahmadkaleembhatti  
+- Email: ahmadkaleeem1@gmail.com  
+
+---
+
+## GitHub Stats
+
+![Stats](https://github-readme-stats.vercel.app/api?username=AhmaadKaleeem&theme=dark&hide_border=false)
+
+![Streak](https://nirzak-streak-stats.vercel.app/?user=AhmaadKaleeem&theme=dark&hide_border=false)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AhmaadKaleeem&theme=dark&layout=compact)
