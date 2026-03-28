@@ -1,93 +1,88 @@
 # Ahmad Kaleem Bhatti
 
-## About Me
+## 💫 About Me
 
-Computer Science major focused on building real-world systems and practical solutions. I combine software engineering, data analysis, and machine learning fundamentals to create efficient, scalable, and user-focused applications.
+Computer Science major focused on building real-world systems and practical solutions. I work across software development, data analysis, and machine learning to create efficient and scalable applications.
 
-Currently developing a strong foundation in Machine Learning, with hands-on implementation of regression models and gradient descent, while also building production-style projects across web, mobile, and data domains.
+Currently learning Machine Learning with hands-on implementation of regression models and gradient descent, while developing strong fundamentals in problem solving and system design.
 
 Aspiring Machine Learning Engineer | Python | AI | Data Science | C++
 
 ---
 
-## Current Focus
+## 🚀 Current Focus
 
-- Machine Learning fundamentals (Regression, Cost Functions, Gradient Descent)
-- Data Structures and Algorithms for problem solving
-- Real-world project development (AI, automation, and full-stack systems)
-- Writing clean, maintainable, and production-level code
+- Machine Learning (Regression, Cost Functions, Gradient Descent)  
+- Data Structures and Algorithms  
+- Real-world project development (AI, automation, full-stack)  
+- Writing clean and production-level code  
 
 ---
 
-## Technical Skills
+## 💻 Technical Skills
 
 **Languages:**  
 C++, Python, JavaScript, Dart, SQL, HTML, CSS  
 
-**Frameworks & Technologies:**  
+**Technologies:**  
 Flutter, Firebase, Node.js  
 
-**Data & Analysis:**  
+**Data & Tools:**  
 Pandas, NumPy, Matplotlib, Microsoft Excel, OpenPyXL  
 
-**Tools & Platforms:**  
+**Platforms & Tools:**  
 Git, GitHub, MySQL, Apache, Amazon Seller Central, eBay, Adobe Photoshop  
 
 ---
 
-## Experience
+## 📊 Experience
 
 **Sales & Data Assistant — Atif E-Commerce Services (Islamabad)**  
 Feb 2026 – Present  
 
-- Managed and maintained Excel-based data systems for stock, pricing, and tracking  
-- Handled Amazon and eBay account operations including listings and monitoring  
+- Managed Excel-based systems for stock, pricing, and tracking  
+- Maintained Amazon and eBay listings and operations  
 - Generated AI-based product images for listings  
-- Provided customer support and handled email communication  
-- Ensured smooth day-to-day e-commerce operations  
+- Handled customer communication and support  
+- Ensured smooth daily e-commerce workflows  
 
 ---
 
-## Projects
+## 📂 Projects
 
 **Banking Management System (C++)**  
-- Secure account system with authentication, transactions, and account management  
-- Features include deposits, withdrawals, transfers, and transaction history  
+Secure system with authentication, transactions, and account management  
 
 **Deforestation vs Temperature Analysis (Python)**  
-- Analyzed climate and tree-loss datasets (1901–2016) using Pandas  
-- Identified seasonal patterns and long-term environmental trends  
+Data analysis using Pandas to identify climate trends and patterns  
 
 **Hostel Management System (Web)**  
-- Full-stack system with role-based access (Admin, Warden, Student)  
-- Features include registration, room allocation, payments, and complaint handling  
+Role-based system with registration, room allocation, and payments  
 
 **Pakistan Digital Elections System**  
-- Dual-mode system (CLI + Web) for secure voting  
-- Includes CNIC validation, real-time vote counting, and blockchain-style verification  
+Secure voting system with validation, real-time counting, and verification  
 
 **Pak Land Property Marketplace (Flutter + Firebase)**  
-- Cross-platform marketplace for property listings  
-- Features include AI moderation, booking system, geolocation, and trust scoring  
+Cross-platform marketplace with AI moderation, booking system, and geolocation  
 
 ---
 
-## Education
+## 🎓 Education
 
 **Bachelor of Computer Science — Air University**  
 2024 – 2028  
 
 ---
 
-## Certifications
+## 📜 Certifications
 
-- Object-Oriented Data Structures in C++ — University of Illinois (Coursera)  
-- CS50x Introduction to Programming with Python — Harvard (edX)  
-- Fundamentals of Generative AI — Microsoft Learn  
+- Object-Oriented Data Structures in C++ — University of Illinois  
+- CS50x Introduction to Programming with Python — Harvard  
+- Fundamentals of Generative AI — Microsoft  
 
 ---
 
-## Links
+## 🌐 Links
 
 - GitHub: https://github.com/AhmaadKaleeem  
 - LinkedIn: https://linkedin.com/in/ahmadkaleembhatti  
@@ -95,10 +90,14 @@ Feb 2026 – Present
 
 ---
 
-## GitHub Stats
+## 📊 GitHub Stats
 
-![Stats](https://github-readme-stats.vercel.app/api?username=AhmaadKaleeem&theme=dark&hide_border=false)
+![](https://github-readme-stats.vercel.app/api?username=AhmaadKaleeem&theme=dark&hide_border=false&include_all_commits=false&count_private=false)
 
-![Streak](https://nirzak-streak-stats.vercel.app/?user=AhmaadKaleeem&theme=dark&hide_border=false)
+![](https://nirzak-streak-stats.vercel.app/?user=AhmaadKaleeem&theme=dark&hide_border=false)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AhmaadKaleeem&theme=dark&layout=compact)
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=AhmaadKaleeem&theme=dark&hide_border=false&layout=compact)
+
+---
+
+![](https://visitcount.itsvg.in/api?id=AhmaadKaleeem&icon=0&color=0)
