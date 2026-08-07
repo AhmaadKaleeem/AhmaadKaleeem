@@ -110,7 +110,7 @@ def generate_header_svg(title, filename):
     print(f"Generated {filename}")
 
 def generate_terminal_svg():
-    """Generates an animated terminal intro"""
+    """Generates a highly animated terminal intro"""
     svg = f"""<svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
         @import url('{FONT_URL}');
@@ -118,11 +118,18 @@ def generate_terminal_svg():
         .border {{ stroke: {THEME_ESCALATE}; stroke-width: 1; stroke-opacity: 0.5; }}
         .text {{ font-family: '{FONT_FAMILY}'; font-size: 18px; fill: {THEME_SIGNAL}; }}
         .prompt {{ fill: {THEME_ESCALATE}; font-weight: 700; }}
+        .highlight {{ fill: {THEME_ALLOW}; font-weight: 700; }}
         .cursor {{ fill: {THEME_ALLOW}; animation: blink 1s step-end infinite; }}
-        .typing1 {{ stroke: transparent; animation: typing1 2s steps(40, end) forwards; white-space: nowrap; overflow: hidden; display: inline-block; width: 0; }}
+        
+        /* Animation delays for lines */
+        .line1, .line2, .line3, .line4 {{ opacity: 0; }}
+        .line1 {{ animation: fadeIn 0.1s forwards 0.5s; }}
+        .line2 {{ animation: fadeIn 0.1s forwards 1.5s; }}
+        .line3 {{ animation: fadeIn 0.1s forwards 3.0s; }}
+        .line4 {{ animation: fadeIn 0.1s forwards 4.0s; }}
         
         @keyframes blink {{ 0%, 100% {{ opacity: 1; }} 50% {{ opacity: 0; }} }}
-        @keyframes typing1 {{ from {{ width: 0; }} to {{ width: 100%; }} }}
+        @keyframes fadeIn {{ to {{ opacity: 1; }} }}
     </style>
     
     <!-- Window -->
@@ -136,15 +143,24 @@ def generate_terminal_svg():
 
     <!-- Terminal Content -->
     <g transform="translate(20, 65)">
-        <text y="0" class="text">
-            <tspan class="prompt">ahmad@secure-node:~$</tspan> whoami
-        </text>
-        <text y="30" class="text" style="fill: {THEME_ALLOW};">Ahmad Kaleem Bhatti | AI Security Engineer</text>
-        <text y="70" class="text">
-            <tspan class="prompt">ahmad@secure-node:~$</tspan> cat current_mission.txt
-        </text>
-        <text y="100" class="text" style="fill: {THEME_ALLOW};">Building deterministic control layers for autonomous agents.</text>
-        <rect x="540" y="85" width="10" height="18" class="cursor" />
+        <g class="line1">
+            <text y="0" class="text"><tspan class="prompt">ahmad@secure-node:~$</tspan> whoami</text>
+        </g>
+        
+        <g class="line2">
+            <text y="30" class="text highlight">Ahmad Kaleem Bhatti | Founder &amp; AI Security Engineer</text>
+        </g>
+        
+        <g class="line3">
+            <text y="70" class="text"><tspan class="prompt">ahmad@secure-node:~$</tspan> cat current_mission.txt</text>
+        </g>
+        
+        <g class="line4">
+            <text y="100" class="text highlight">Building deterministic control layers for autonomous agents.</text>
+            <rect x="540" y="85" width="10" height="18" class="cursor">
+                <animate attributeName="x" values="540;540;540" keyTimes="0;0.5;1" dur="2s" repeatCount="indefinite"/>
+            </rect>
+        </g>
     </g>
 </svg>"""
     with open("terminal.svg", 'w') as f:

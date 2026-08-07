@@ -3,32 +3,29 @@
   <a href="https://linkedin.com/in/ahmadkaleembhatti"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   <br/><br/>
   <b>Building security infrastructure for autonomous AI systems.</b>
-  <p>Founder @ <a href="https://actsurance.qualixofficial.com">Actsurance</a> • AI Engineer • CS @ Air University Islamabad</p>
-</div>
-
 <div align="center">
-  <img src="./terminal.svg" alt="Terminal Intro" />
+  <img src="./terminal.svg?v=3" alt="Terminal Intro" />
 </div>
 
 ---
 
 <div align="center">
-  <img src="./stats.svg" alt="GitHub Stats" />
+  <img src="./stats.svg?v=3" alt="GitHub Stats" />
 </div>
 
 ---
 
-<img src="./header-about.svg" alt="About" />
+<img src="./header-about.svg?v=3" alt="About" />
 
-Actsurance is an AI security infrastructure platform that sits between autonomous AI agents and the external tools they use. It enforces access policies before execution, blocks malicious tool calls, protects API credentials and sensitive data from agent exposure, and generates tamper-evident audit logs for compliance verification. The project was selected to present at NIC Lahore and NIC Hyderabad.
+Actsurance is a **deterministic AI security infrastructure platform** that sits between autonomous agents and their external toolset. It enforces access policies before execution, blocks malicious actions, protects API credentials, and generates tamper-evident audit logs.
 
-Previously built Qualix AI, an agentic lead qualification and sales automation platform for WhatsApp and Instagram workflows.
+Previously built **Qualix AI**, an agentic lead qualification and sales automation platform for WhatsApp and Instagram.
 
-Open to AI Engineering, Backend Engineering, and Agentic AI opportunities.
+Open to **AI Engineering**, **Backend Architecture**, and **Agentic AI** opportunities.
 
 ---
 
-<img src="./header-building.svg" alt="What I'm Building" />
+<img src="./header-building.svg?v=3" alt="What I'm Building" />
 
 ## [Actsurance](https://actsurance.qualixofficial.com)
 
@@ -61,7 +58,7 @@ Agentic lead qualification platform supporting WhatsApp and Instagram automation
 
 ---
 
-<img src="./header-stack.svg" alt="Stack" />
+<img src="./header-stack.svg?v=3" alt="Stack" />
 
 ### Languages
 `Python` `TypeScript` `JavaScript` `Go` `C++` `Dart`
@@ -83,7 +80,7 @@ Agentic lead qualification platform supporting WhatsApp and Instagram automation
 
 ---
 
-<img src="./header-projects.svg" alt="Projects" />
+<img src="./header-projects.svg?v=3" alt="Projects" />
 
 ## [Actsurance](https://actsurance.qualixofficial.com)
 AI security infrastructure for autonomous agent systems with deterministic policy enforcement, credential protection, tool authorization, and tamper-evident audit logging.
@@ -108,7 +105,7 @@ C++ election processing platform with CNIC validation, role-based access control
 
 ---
 
-<img src="./header-background.svg" alt="Background" />
+<img src="./header-background.svg?v=3" alt="Background" />
 
 **Bachelor of Computer Science**  
 Air University Islamabad  
@@ -128,7 +125,7 @@ Feb 2026-May 2026
 
 ---
 
-<img src="./header-certifications.svg" alt="Certifications" />
+<img src="./header-certifications.svg?v=3" alt="Certifications" />
 
 - Object-Oriented Data Structures in C++, University of Illinois (Coursera)
 - CS50's Introduction to Programming with Python, Harvard University (edX)
@@ -136,7 +133,7 @@ Feb 2026-May 2026
 
 ---
 
-<img src="./header-contact.svg" alt="Contact" />
+<img src="./header-contact.svg?v=3" alt="Contact" />
 
 - **LinkedIn:** https://linkedin.com/in/ahmadkaleembhatti
 - **GitHub:** https://github.com/AhmaadKaleeem
