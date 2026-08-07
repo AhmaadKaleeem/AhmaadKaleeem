@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./terminal.svg?v=6" alt="Identity" />
+  <img src="./terminal.svg?v=7" alt="Identity" />
 </div>
 
 <div align="center">
@@ -10,12 +10,12 @@
 <br/>
 
 <div align="center">
-  <img src="./stats.svg?v=6" alt="GitHub Stats" />
+  <img src="./stats.svg?v=7" alt="GitHub Stats" />
 </div>
 
 <br/>
 
-<img src="./header-building.svg?v=6" alt="Evidence" />
+<img src="./header-building.svg?v=7" alt="Evidence" />
 
 ### [Actsurance](https://actsurance.qualixofficial.com) — Zero-Trust Policy Gateway for AI Agents
 
@@ -28,7 +28,7 @@ Actsurance is a security infrastructure platform that intercepts every tool requ
 <br/>
 
 <div align="center">
-  <img src="./actsurance-architecture.svg?v=6" alt="Actsurance Architecture" />
+  <img src="./actsurance-architecture.svg?v=7" alt="Actsurance Architecture" />
 </div>
 
 <br/>
@@ -65,7 +65,7 @@ A backend service automating lead qualification across WhatsApp and Instagram us
 
 </details>
 
-<img src="./header-stack.svg?v=6" alt="Technical Focus" />
+<img src="./header-stack.svg?v=7" alt="Technical Focus" />
 
 ### AI Systems & Orchestration
 LangChain, RAG, ChromaDB, ONNX, Tool Calling
@@ -76,7 +76,7 @@ FastAPI, Python, Go, TypeScript, PostgreSQL, Redis, Celery, Docker, Temporal
 ### Security & Identity
 Open Policy Agent (OPA), Cedar, RBAC, mTLS, JWT, Vault
 
-<img src="./header-background.svg?v=6" alt="Engineering Approach" />
+<img src="./header-background.svg?v=7" alt="Engineering Approach" />
 
 - **Fail-Closed Execution:** Systems must default to `ESCALATE` rather than `ALLOW`. If the ONNX risk model crashes, the fast path stops safely.
 - **Decoupled Failures:** External API writes and LLM inferences fail independently and at different rates. They require separate retry queues.
@@ -94,7 +94,7 @@ Open Policy Agent (OPA), Cedar, RBAC, mTLS, JWT, Vault
 </details>
 
 <div align="center">
-  <img src="./header-contact.svg?v=6" alt="Contact" />
+  <img src="./header-contact.svg?v=7" alt="Contact" />
 </div>
 
 - **Portfolio:** [ahmadkaleem.tech](https://www.ahmadkaleem.tech)

@@ -7,7 +7,7 @@ THEME_SIGNAL = "#FFFFFF"
 THEME_ALLOW = "#059D00"
 THEME_ESCALATE = "#DF6513"
 FONT_FAMILY = "Courier Prime, monospace"
-FONT_URL = "https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+FONT_URL = "https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
 
 # GitHub GraphQL Setup
 GH_TOKEN = os.getenv('GH_TOKEN')
