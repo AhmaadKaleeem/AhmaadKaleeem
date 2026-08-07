@@ -177,17 +177,11 @@ def generate_name_svg():
     <text x="420" y="36" font-family="{FONT_FAMILY}" font-size="28px" fill="#555">|</text>
     
     <!-- Right Side: Badges -->
-    <g transform="translate(620, 18)">
-        <!-- LinkedIn Badge -->
-        <a href="https://linkedin.com/in/ahmadkaleembhatti" target="_blank">
-            <rect x="0" y="0" width="75" height="24" fill="#0A66C2" rx="0" />
-            <text x="37.5" y="16" class="badge-text" text-anchor="middle">LinkedIn</text>
-        </a>
-        
+    <g transform="translate(705, 18)">
         <!-- Portfolio Badge -->
         <a href="https://www.ahmadkaleem.tech" target="_blank">
-            <rect x="85" y="0" width="75" height="24" fill="#000000" rx="0" />
-            <text x="122.5" y="16" class="badge-text" text-anchor="middle">Portfolio</text>
+            <rect x="0" y="0" width="75" height="24" fill="#000000" rx="0" />
+            <text x="37.5" y="16" class="badge-text" text-anchor="middle">Portfolio</text>
         </a>
     </g>
 </svg>"""
