@@ -1,0 +1,38 @@
+name: Generate Profile SVGs
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight UTC
+  push:
+    branches: [ "main" ] # Runs when you push changes to main
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Environment (Python)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run generation script
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: python generate_svgs.py 
+
+      - name: Commit and Push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add *.svg
+          git diff-index --quiet HEAD || git commit -m "Auto-update profile graphics"
+          git push

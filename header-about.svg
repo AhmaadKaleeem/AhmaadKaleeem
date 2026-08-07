@@ -1,0 +1,44 @@
+<svg width="800" height="120" viewBox="0 0 800 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        .title {
+            font-family: 'Courier Prime, monospace';
+            font-weight: 700;
+            font-size: 48px;
+            fill: #FFFFFF;
+            animation: fadeIn 1.5s ease-in-out forwards;
+            opacity: 0;
+        }
+        .dot {
+            fill: #DF6513;
+            animation: pulse 2s infinite;
+        }
+        .line {
+            stroke: #DF6513;
+            stroke-width: 2;
+            stroke-dasharray: 800;
+            stroke-dashoffset: 800;
+            animation: drawLine 1s ease-out 0.5s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes drawLine {
+            to { stroke-dashoffset: 0; }
+        }
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+    </style>
+    <rect width="800" height="120" fill="#000000" />
+    
+    <!-- Title -->
+    <text x="40" y="75" class="title">About Me</text>
+    <circle cx="20" cy="62" r="6" class="dot" />
+    
+    <!-- Decorative Line -->
+    <line x1="40" y1="95" x2="760" y2="95" class="line" />
+</svg>

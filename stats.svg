@@ -1,0 +1,62 @@
+<svg width="800" height="250" viewBox="0 0 800 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        .container {
+            fill: #000000;
+        }
+        .border {
+            stroke: #DF6513;
+            stroke-width: 1;
+            stroke-opacity: 0.5;
+        }
+        .header {
+            font-family: 'Courier Prime, monospace';
+            font-size: 24px;
+            font-weight: 700;
+            fill: #DF6513;
+        }
+        .label {
+            font-family: 'Courier Prime, monospace';
+            font-size: 16px;
+            fill: #FFFFFF;
+            opacity: 0.8;
+        }
+        .value {
+            font-family: 'Courier Prime, monospace';
+            font-size: 28px;
+            font-weight: 700;
+            fill: #059D00;
+        }
+        .card {
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    
+    <!-- Background & Border -->
+    <rect x="5" y="5" width="790" height="240" rx="8" class="container border" />
+    
+    <g class="card">
+        <!-- Title -->
+        <text x="40" y="45" class="header">&gt; SYSTEM_STATS: AhmaadKaleeem</text>
+        <line x1="40" y1="60" x2="760" y2="60" class="border" />
+        
+        <!-- Stat: Commits -->
+        <rect x="40" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border" />
+        <text x="60" y="115" class="label">Total Commits</text>
+        <text x="60" y="165" class="value">342</text>
+        
+        <!-- Stat: PRs -->
+        <rect x="290" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border" />
+        <text x="310" y="115" class="label">Pull Requests</text>
+        <text x="310" y="165" class="value">12</text>
+        
+        <!-- Stat: Issues -->
+        <rect x="540" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border" />
+        <text x="560" y="115" class="label">Issues</text>
+        <text x="560" y="165" class="value">5</text>
+    </g>
+</svg>
