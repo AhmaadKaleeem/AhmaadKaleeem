@@ -1,9 +1,18 @@
 <div align="center">
-  <a href="https://www.ahmadkaleem.tech"><img src="./name.svg?v=9" alt="Ahmad Kaleem Bhatti" /></a>
+  <a href="https://www.ahmadkaleem.tech"><img src="./name.svg?v=10" alt="Ahmad Kaleem Bhatti" /></a>
 </div>
 
 <div align="center">
-  <img src="./terminal.svg?v=9" alt="Identity" />
+  <a href="https://linkedin.com/in/ahmadkaleembhatti">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://www.ahmadkaleem.tech">
+    <img src="https://img.shields.io/badge/Portfolio-000000?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio" />
+  </a>
+</div>
+
+<div align="center">
+  <img src="./terminal.svg?v=10" alt="Identity" />
 </div>
 
 <div align="center">
@@ -14,8 +23,8 @@
 <br/>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=AhmaadKaleeem&theme=dark&bg_color=000000&title_color=DF6513&text_color=FFFFFF&icon_color=059D00&hide_border=true&show_icons=true" alt="GitHub Stats" height="170" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=AhmaadKaleeem&theme=dark&background=000000&ring=DF6513&fire=DF6513&currStreakNum=059D00&currStreakLabel=DF6513&sideNums=FFFFFF&sideLabels=FFFFFF&dates=FFFFFF&hide_border=true" alt="GitHub Streak" height="170" />
+  <img src="./stats.svg?v=10" alt="GitHub Stats" height="195" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=AhmaadKaleeem&theme=dark&background=000000&ring=DF6513&fire=DF6513&currStreakNum=059D00&currStreakLabel=DF6513&sideNums=FFFFFF&sideLabels=FFFFFF&dates=FFFFFF&hide_border=true" alt="GitHub Streak" height="195" />
 </div>
 
 <br/>
@@ -92,16 +101,10 @@ Open Policy Agent (OPA), Cedar, RBAC, mTLS, JWT, Vault
 </details>
 
 <div align="center">
-  <img src="./header-contact.svg?v=9" alt="Contact" />
+  <img src="./header-contact.svg?v=10" alt="Contact" />
 </div>
 
 <div align="center">
-  <a href="https://www.ahmadkaleem.tech">
-    <img src="https://img.shields.io/badge/ahmadkaleem.tech-000000?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio" />
-  </a>
-  <a href="https://linkedin.com/in/ahmadkaleembhatti">
-    <img src="https://img.shields.io/badge/ahmadkaleembhatti-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
   <a href="mailto:ahmadkaleeem1@gmail.com">
     <img src="https://img.shields.io/badge/ahmadkaleeem1@gmail.com-DF6513?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
   </a>
