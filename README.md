@@ -99,12 +99,21 @@ Open Policy Agent (OPA), Cedar, RBAC, mTLS, JWT, Vault
 </details>
 
 <div align="center">
-  <img src="./header-contact.svg?v=10" alt="Contact" />
+  <img src="./header-contact.svg?v=11" alt="Contact" />
 </div>
 
 <div align="center">
   <a href="mailto:ahmadkaleeem1@gmail.com">
     <img src="https://img.shields.io/badge/ahmadkaleeem1@gmail.com-DF6513?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  <a href="https://github.com/AhmaadKaleeem">
+    <img src="https://img.shields.io/badge/AhmaadKaleeem-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+  <a href="https://linkedin.com/in/ahmadkaleembhatti">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://www.ahmadkaleem.tech">
+    <img src="https://img.shields.io/badge/Portfolio-000000?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio" />
   </a>
   <img src="https://img.shields.io/badge/Islamabad_Pakistan-059D00?style=flat-square&logo=googlemaps&logoColor=white" alt="Location" />
 </div>

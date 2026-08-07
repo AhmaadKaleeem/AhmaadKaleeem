@@ -68,9 +68,12 @@ def generate_header_svg(title, filename):
             font-family: '{FONT_FAMILY}';
             font-weight: 700;
             font-size: 42px;
-            fill: {THEME_SIGNAL};
+            fill: #000000;
             opacity: 0;
             animation: textReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.3s;
+        }}
+        @media (prefers-color-scheme: dark) {{
+            .title {{ fill: #FFFFFF; }}
         }}
         .glow {{
             fill: {THEME_ESCALATE};
@@ -114,7 +117,7 @@ def generate_header_svg(title, filename):
             50% {{ opacity: 0.3; }}
         }}
     </style>
-    <rect width="800" height="120" fill="{THEME_VOID}" />
+    <rect width="800" height="120" fill="transparent" />
     
     <!-- Background Glow -->
     <rect x="20" y="60" width="100" height="40" class="glow" />
