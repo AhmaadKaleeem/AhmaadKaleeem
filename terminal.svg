@@ -1,6 +1,6 @@
 <svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
         .bg { fill: #000000; }
         .border { stroke: #DF6513; stroke-width: 1; stroke-opacity: 0.5; }
         .text { font-family: 'Courier Prime, monospace'; font-size: 18px; fill: #FFFFFF; }

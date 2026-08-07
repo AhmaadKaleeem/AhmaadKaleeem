@@ -1,6 +1,6 @@
 <svg width="800" height="250" viewBox="0 0 800 250" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
         .container {
             fill: #000000;
         }
@@ -47,16 +47,16 @@
         <!-- Stat: Commits -->
         <rect x="40" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border" />
         <text x="60" y="115" class="label">Total Commits</text>
-        <text x="60" y="165" class="value">613</text>
+        <text x="60" y="165" class="value">342</text>
         
         <!-- Stat: PRs -->
         <rect x="290" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border" />
         <text x="310" y="115" class="label">Pull Requests</text>
-        <text x="310" y="165" class="value">11</text>
+        <text x="310" y="165" class="value">12</text>
         
         <!-- Stat: Issues -->
         <rect x="540" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border" />
         <text x="560" y="115" class="label">Issues</text>
-        <text x="560" y="165" class="value">1</text>
+        <text x="560" y="165" class="value">5</text>
     </g>
 </svg>
