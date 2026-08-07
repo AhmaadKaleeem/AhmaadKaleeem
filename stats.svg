@@ -1,61 +1,61 @@
 <svg width="800" height="250" viewBox="0 0 800 250" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
-        .container {
-            fill: #000000;
+        .container { fill: #000000; }
+        .border-glow {
+            stroke: #059D00;
+            stroke-width: 2;
+            filter: blur(4px);
+            animation: pulseGlow 2s infinite alternate;
         }
-        .border {
-            stroke: #DF6513;
+        .border-solid {
+            stroke: #059D00;
             stroke-width: 1;
-            stroke-opacity: 0.5;
         }
-        .header {
-            font-family: 'Courier Prime, monospace';
-            font-size: 24px;
-            font-weight: 700;
-            fill: #DF6513;
+        .header { font-family: 'Courier Prime, monospace'; font-size: 24px; font-weight: 700; fill: #DF6513; }
+        .label { font-family: 'Courier Prime, monospace'; font-size: 16px; fill: #FFFFFF; opacity: 0.8; }
+        .value { font-family: 'Courier Prime, monospace'; font-size: 32px; font-weight: 700; fill: #059D00; }
+        
+        .stat-box { opacity: 0; animation: statReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+        .box1 { animation-delay: 0.5s; }
+        .box2 { animation-delay: 0.7s; }
+        .box3 { animation-delay: 0.9s; }
+        
+        @keyframes statReveal {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
-        .label {
-            font-family: 'Courier Prime, monospace';
-            font-size: 16px;
-            fill: #FFFFFF;
-            opacity: 0.8;
-        }
-        .value {
-            font-family: 'Courier Prime, monospace';
-            font-size: 28px;
-            font-weight: 700;
-            fill: #059D00;
-        }
-        .card {
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes pulseGlow {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.8; }
         }
     </style>
     
-    <!-- Background & Border -->
-    <rect x="5" y="5" width="790" height="240" rx="8" class="container border" />
+    <!-- Background -->
+    <rect x="5" y="5" width="790" height="240" rx="8" class="container border-solid" />
+    <rect x="5" y="5" width="790" height="240" rx="8" fill="none" class="border-glow" />
     
-    <g class="card">
-        <!-- Title -->
-        <text x="40" y="45" class="header">&gt; SYSTEM_STATS: AhmaadKaleeem</text>
-        <line x1="40" y1="60" x2="760" y2="60" class="border" />
-        
-        <!-- Stat: Commits -->
-        <rect x="40" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border" />
+    <!-- Title -->
+    <text x="40" y="45" class="header">&gt; SYSTEM_STATS: AhmaadKaleeem</text>
+    <line x1="40" y1="60" x2="760" y2="60" class="border-solid" style="opacity: 0.3;" />
+    
+    <!-- Stat: Commits -->
+    <g class="stat-box box1" transform="translate(0,0)">
+        <rect x="40" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
         <text x="60" y="115" class="label">Total Commits</text>
         <text x="60" y="165" class="value">342</text>
-        
-        <!-- Stat: PRs -->
-        <rect x="290" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border" />
+    </g>
+    
+    <!-- Stat: PRs -->
+    <g class="stat-box box2" transform="translate(0,0)">
+        <rect x="290" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
         <text x="310" y="115" class="label">Pull Requests</text>
         <text x="310" y="165" class="value">12</text>
-        
-        <!-- Stat: Issues -->
-        <rect x="540" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border" />
+    </g>
+    
+    <!-- Stat: Issues -->
+    <g class="stat-box box3" transform="translate(0,0)">
+        <rect x="540" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
         <text x="560" y="115" class="label">Issues</text>
         <text x="560" y="165" class="value">5</text>
     </g>

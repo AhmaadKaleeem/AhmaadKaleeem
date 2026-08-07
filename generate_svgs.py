@@ -60,50 +60,72 @@ def fetch_github_stats():
         return None
 
 def generate_header_svg(title, filename):
-    """Generates an animated SVG header"""
+    """Generates an animated, glowing SVG header to amaze recruiters"""
     svg = f"""<svg width="800" height="120" viewBox="0 0 800 120" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
         @import url('{FONT_URL}');
         .title {{
             font-family: '{FONT_FAMILY}';
             font-weight: 700;
-            font-size: 48px;
+            font-size: 42px;
             fill: {THEME_SIGNAL};
-            animation: fadeIn 1.5s ease-in-out forwards;
             opacity: 0;
+            animation: textReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.3s;
+        }}
+        .glow {{
+            fill: {THEME_ESCALATE};
+            filter: blur(8px);
+            opacity: 0.4;
+            animation: pulseGlow 3s infinite alternate;
         }}
         .dot {{
             fill: {THEME_ESCALATE};
             animation: pulse 2s infinite;
         }}
         .line {{
-            stroke: {THEME_ESCALATE};
+            stroke: {THEME_ALLOW};
             stroke-width: 2;
             stroke-dasharray: 800;
             stroke-dashoffset: 800;
-            animation: drawLine 1s ease-out 0.5s forwards;
+            animation: drawLine 1.2s cubic-bezier(0.8, 0, 0.2, 1) forwards;
         }}
-        @keyframes fadeIn {{
-            from {{ opacity: 0; transform: translateY(10px); }}
-            to {{ opacity: 1; transform: translateY(0); }}
+        .accent-box {{
+            fill: {THEME_ESCALATE};
+            opacity: 0;
+            animation: boxReveal 0.5s ease-out forwards 0.8s;
+        }}
+        
+        @keyframes textReveal {{
+            0% {{ opacity: 0; transform: translateX(-20px); letter-spacing: -5px; filter: blur(4px); }}
+            100% {{ opacity: 1; transform: translateX(0); letter-spacing: 0px; filter: blur(0px); }}
         }}
         @keyframes drawLine {{
             to {{ stroke-dashoffset: 0; }}
         }}
+        @keyframes pulseGlow {{
+            0% {{ opacity: 0.2; transform: scale(0.98); }}
+            100% {{ opacity: 0.6; transform: scale(1.02); }}
+        }}
+        @keyframes boxReveal {{
+            to {{ opacity: 1; transform: scaleX(1); }}
+        }}
         @keyframes pulse {{
-            0% {{ opacity: 0.5; }}
-            50% {{ opacity: 1; }}
-            100% {{ opacity: 0.5; }}
+            0%, 100% {{ opacity: 1; }}
+            50% {{ opacity: 0.3; }}
         }}
     </style>
     <rect width="800" height="120" fill="{THEME_VOID}" />
     
+    <!-- Background Glow -->
+    <rect x="20" y="60" width="100" height="40" class="glow" />
+    
     <!-- Title -->
-    <text x="40" y="75" class="title">{title}</text>
-    <circle cx="20" cy="62" r="6" class="dot" />
+    <text x="50" y="75" class="title">{title}</text>
+    <rect x="20" y="45" width="8" height="35" class="accent-box" transform-origin="20 45" transform="scaleX(0)" />
     
     <!-- Decorative Line -->
-    <line x1="40" y1="95" x2="760" y2="95" class="line" />
+    <line x1="20" y1="95" x2="780" y2="95" class="line" />
+    <circle cx="780" cy="95" r="4" class="dot" />
 </svg>"""
     with open(filename, 'w') as f:
         f.write(svg)
@@ -168,7 +190,7 @@ def generate_terminal_svg():
     print("Generated terminal.svg")
 
 def generate_stats_svg(stats):
-    """Generates an SVG for GitHub Stats"""
+    """Generates an incredibly animated SVG for GitHub Stats"""
     if not stats:
         print("No stats data available.")
         return
@@ -177,61 +199,61 @@ def generate_stats_svg(stats):
     svg = f"""<svg width="800" height="250" viewBox="0 0 800 250" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
         @import url('{FONT_URL}');
-        .container {{
-            fill: {THEME_VOID};
+        .container {{ fill: {THEME_VOID}; }}
+        .border-glow {{
+            stroke: {THEME_ALLOW};
+            stroke-width: 2;
+            filter: blur(4px);
+            animation: pulseGlow 2s infinite alternate;
         }}
-        .border {{
-            stroke: {THEME_ESCALATE};
+        .border-solid {{
+            stroke: {THEME_ALLOW};
             stroke-width: 1;
-            stroke-opacity: 0.5;
         }}
-        .header {{
-            font-family: '{FONT_FAMILY}';
-            font-size: 24px;
-            font-weight: 700;
-            fill: {THEME_ESCALATE};
+        .header {{ font-family: '{FONT_FAMILY}'; font-size: 24px; font-weight: 700; fill: {THEME_ESCALATE}; }}
+        .label {{ font-family: '{FONT_FAMILY}'; font-size: 16px; fill: {THEME_SIGNAL}; opacity: 0.8; }}
+        .value {{ font-family: '{FONT_FAMILY}'; font-size: 32px; font-weight: 700; fill: {THEME_ALLOW}; }}
+        
+        .stat-box {{ opacity: 0; animation: statReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }}
+        .box1 {{ animation-delay: 0.5s; }}
+        .box2 {{ animation-delay: 0.7s; }}
+        .box3 {{ animation-delay: 0.9s; }}
+        
+        @keyframes statReveal {{
+            0% {{ opacity: 0; transform: translateY(20px); }}
+            100% {{ opacity: 1; transform: translateY(0); }}
         }}
-        .label {{
-            font-family: '{FONT_FAMILY}';
-            font-size: 16px;
-            fill: {THEME_SIGNAL};
-            opacity: 0.8;
-        }}
-        .value {{
-            font-family: '{FONT_FAMILY}';
-            font-size: 28px;
-            font-weight: 700;
-            fill: {THEME_ALLOW};
-        }}
-        .card {{
-            animation: fadeIn 1s ease-in-out forwards;
-        }}
-        @keyframes fadeIn {{
-            from {{ opacity: 0; }}
-            to {{ opacity: 1; }}
+        @keyframes pulseGlow {{
+            0% {{ opacity: 0.3; }}
+            100% {{ opacity: 0.8; }}
         }}
     </style>
     
-    <!-- Background & Border -->
-    <rect x="5" y="5" width="790" height="240" rx="8" class="container border" />
+    <!-- Background -->
+    <rect x="5" y="5" width="790" height="240" rx="8" class="container border-solid" />
+    <rect x="5" y="5" width="790" height="240" rx="8" fill="none" class="border-glow" />
     
-    <g class="card">
-        <!-- Title -->
-        <text x="40" y="45" class="header">&gt; SYSTEM_STATS: {stats['login']}</text>
-        <line x1="40" y1="60" x2="760" y2="60" class="border" />
-        
-        <!-- Stat: Commits -->
-        <rect x="40" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border" />
+    <!-- Title -->
+    <text x="40" y="45" class="header">&gt; SYSTEM_STATS: {stats['login']}</text>
+    <line x1="40" y1="60" x2="760" y2="60" class="border-solid" style="opacity: 0.3;" />
+    
+    <!-- Stat: Commits -->
+    <g class="stat-box box1" transform="translate(0,0)">
+        <rect x="40" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
         <text x="60" y="115" class="label">Total Commits</text>
         <text x="60" y="165" class="value">{stats['total_commits']}</text>
-        
-        <!-- Stat: PRs -->
-        <rect x="290" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border" />
+    </g>
+    
+    <!-- Stat: PRs -->
+    <g class="stat-box box2" transform="translate(0,0)">
+        <rect x="290" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
         <text x="310" y="115" class="label">Pull Requests</text>
         <text x="310" y="165" class="value">{stats['total_prs']}</text>
-        
-        <!-- Stat: Issues -->
-        <rect x="540" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border" />
+    </g>
+    
+    <!-- Stat: Issues -->
+    <g class="stat-box box3" transform="translate(0,0)">
+        <rect x="540" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
         <text x="560" y="115" class="label">Issues</text>
         <text x="560" y="165" class="value">{stats['total_issues']}</text>
     </g>

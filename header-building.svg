@@ -4,41 +4,63 @@
         .title {
             font-family: 'Courier Prime, monospace';
             font-weight: 700;
-            font-size: 48px;
+            font-size: 42px;
             fill: #FFFFFF;
-            animation: fadeIn 1.5s ease-in-out forwards;
             opacity: 0;
+            animation: textReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.3s;
+        }
+        .glow {
+            fill: #DF6513;
+            filter: blur(8px);
+            opacity: 0.4;
+            animation: pulseGlow 3s infinite alternate;
         }
         .dot {
             fill: #DF6513;
             animation: pulse 2s infinite;
         }
         .line {
-            stroke: #DF6513;
+            stroke: #059D00;
             stroke-width: 2;
             stroke-dasharray: 800;
             stroke-dashoffset: 800;
-            animation: drawLine 1s ease-out 0.5s forwards;
+            animation: drawLine 1.2s cubic-bezier(0.8, 0, 0.2, 1) forwards;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .accent-box {
+            fill: #DF6513;
+            opacity: 0;
+            animation: boxReveal 0.5s ease-out forwards 0.8s;
+        }
+        
+        @keyframes textReveal {
+            0% { opacity: 0; transform: translateX(-20px); letter-spacing: -5px; filter: blur(4px); }
+            100% { opacity: 1; transform: translateX(0); letter-spacing: 0px; filter: blur(0px); }
         }
         @keyframes drawLine {
             to { stroke-dashoffset: 0; }
         }
+        @keyframes pulseGlow {
+            0% { opacity: 0.2; transform: scale(0.98); }
+            100% { opacity: 0.6; transform: scale(1.02); }
+        }
+        @keyframes boxReveal {
+            to { opacity: 1; transform: scaleX(1); }
+        }
         @keyframes pulse {
-            0% { opacity: 0.5; }
-            50% { opacity: 1; }
-            100% { opacity: 0.5; }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
         }
     </style>
     <rect width="800" height="120" fill="#000000" />
     
+    <!-- Background Glow -->
+    <rect x="20" y="60" width="100" height="40" class="glow" />
+    
     <!-- Title -->
-    <text x="40" y="75" class="title">What I'm Building</text>
-    <circle cx="20" cy="62" r="6" class="dot" />
+    <text x="50" y="75" class="title">What I'm Building</text>
+    <rect x="20" y="45" width="8" height="35" class="accent-box" transform-origin="20 45" transform="scaleX(0)" />
     
     <!-- Decorative Line -->
-    <line x1="40" y1="95" x2="760" y2="95" class="line" />
+    <line x1="20" y1="95" x2="780" y2="95" class="line" />
+    <circle cx="780" cy="95" r="4" class="dot" />
 </svg>
