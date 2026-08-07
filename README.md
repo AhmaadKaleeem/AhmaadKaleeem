@@ -14,7 +14,8 @@
 <br/>
 
 <div align="center">
-  <img src="./stats.svg?v=8" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=AhmaadKaleeem&theme=dark&bg_color=000000&title_color=DF6513&text_color=FFFFFF&icon_color=059D00&hide_border=true&show_icons=true" alt="GitHub Stats" height="170" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=AhmaadKaleeem&theme=dark&background=000000&ring=DF6513&fire=DF6513&currStreakNum=059D00&currStreakLabel=DF6513&sideNums=FFFFFF&sideLabels=FFFFFF&dates=FFFFFF&hide_border=true" alt="GitHub Streak" height="170" />
 </div>
 
 <br/>
@@ -41,13 +42,7 @@ Actsurance is a security infrastructure platform that intercepts every tool requ
 <summary><b>View Technical Architecture and Implementation</b></summary>
 <br/>
 
-Actsurance is a layered security pipeline that intercepts every tool call.
-
-1. **L1 Firewall (Go sidecar)** Sub-millisecond RE2 regex inspection using OWASP-grade patterns. Detects SQL injection, command injection, PII, and credential leaks. Match equals HTTP 403 HARD DENY.
-2. **Routing Splitter (OPA and ONNX)** Open Policy Agent enforces static RBAC rules ("System X cannot call Tool Y"). ONNX provides a lightweight ML model scoring prompt intent. High-confidence ALLOWs are fast-tracked; ambiguous requests are escalated.
-3. **Fast Path (Synchronous)** Evaluates OPA, retrieves secrets via the **Sealed Broker** pattern from Vault/KMS (1h TTL), forwards the external tool sync call, and returns HTTP 200 within a 180ms p99 budget.
-4. **Slow Path (Asynchronous)** Staged in PostgreSQL (status `PENDING_REVIEW`). A **Temporal** workflow starts, returning HTTP 202. The workflow waits for a human Slack signal (Approve/Deny) or a 48h timeout.
-5. **Offline Verifier** An independent open-source worker reads the Postgres audit trail to validate every decision independently without trusting Actsurance runtime state.
+Actsurance is a layered security pipeline that intercepts every tool call. It acts as a deterministic policy enforcement layer, evaluating structural rules and routing requests asynchronously for human review when necessary. The core logic focuses on isolating AI agent inferences from critical external system writes, preventing prompt injection attacks from mutating data.
 
 </details>
 

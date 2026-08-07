@@ -232,80 +232,6 @@ def generate_terminal_svg():
         f.write(svg)
     print("Generated terminal.svg")
 
-def generate_stats_svg(stats):
-    """Generates an incredibly animated SVG for GitHub Stats"""
-    if not stats:
-        print("No stats data available.")
-        return
-
-    # Draw stats with Actsurance premium theme
-    svg = f"""<svg width="800" height="250" viewBox="0 0 800 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <style>
-        @import url('{FONT_URL}');
-        .container {{ fill: {THEME_VOID}; }}
-        .border-glow {{
-            stroke: {THEME_ALLOW};
-            stroke-width: 2;
-            filter: blur(4px);
-            animation: pulseGlow 2s infinite alternate;
-        }}
-        .border-solid {{
-            stroke: {THEME_ALLOW};
-            stroke-width: 1;
-        }}
-        .header {{ font-family: '{FONT_FAMILY}'; font-size: 24px; font-weight: 700; fill: {THEME_ESCALATE}; }}
-        .label {{ font-family: '{FONT_FAMILY}'; font-size: 16px; fill: {THEME_SIGNAL}; opacity: 0.8; }}
-        .value {{ font-family: '{FONT_FAMILY}'; font-size: 32px; font-weight: 700; fill: {THEME_ALLOW}; }}
-        
-        .stat-box {{ opacity: 0; animation: statReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }}
-        .box1 {{ animation-delay: 0.5s; }}
-        .box2 {{ animation-delay: 0.7s; }}
-        .box3 {{ animation-delay: 0.9s; }}
-        
-        @keyframes statReveal {{
-            0% {{ opacity: 0; transform: translateY(20px); }}
-            100% {{ opacity: 1; transform: translateY(0); }}
-        }}
-        @keyframes pulseGlow {{
-            0% {{ opacity: 0.3; }}
-            100% {{ opacity: 0.8; }}
-        }}
-    </style>
-    
-    <!-- Background -->
-    <rect x="5" y="5" width="790" height="240" rx="8" class="container border-solid" />
-    <rect x="5" y="5" width="790" height="240" rx="8" fill="none" class="border-glow" />
-    
-    <!-- Title -->
-    <text x="40" y="45" class="header">&gt; SYSTEM_STATS {stats.get('login', 'AhmaadKaleeem')}</text>
-    <line x1="40" y1="60" x2="760" y2="60" class="border-solid" style="opacity: 0.3;" />
-    
-    <!-- Stat: Commits -->
-    <g class="stat-box box1" transform="translate(0,0)">
-        <rect x="40" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
-        <text x="60" y="115" class="label">Total Commits</text>
-        <text x="60" y="165" class="value">{stats['total_commits']}</text>
-    </g>
-    
-    <!-- Stat: PRs -->
-    <g class="stat-box box2" transform="translate(0,0)">
-        <rect x="290" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
-        <text x="310" y="115" class="label">Pull Requests</text>
-        <text x="310" y="165" class="value">{stats['total_prs']}</text>
-    </g>
-    
-    <!-- Stat: Issues -->
-    <g class="stat-box box3" transform="translate(0,0)">
-        <rect x="540" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
-        <text x="560" y="115" class="label">Issues</text>
-        <text x="560" y="165" class="value">{stats['total_issues']}</text>
-    </g>
-</svg>"""
-    
-    with open("stats.svg", 'w') as f:
-        f.write(svg)
-    print("Generated stats.svg")
-
 def generate_actsurance_architecture_svg():
     """Generates an animated architecture diagram for Actsurance"""
     svg = f"""<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -330,7 +256,7 @@ def generate_actsurance_architecture_svg():
     </style>
     
     <rect width="800" height="400" fill="{THEME_VOID}" />
-    <text x="30" y="40" class="title">Actsurance Architecture (v5.1 Firewall-First)</text>
+    <text x="30" y="40" class="title">Actsurance Architecture</text>
     
     <!-- Flow Lines -->
     <path d="M 120 120 L 220 120" class="flow-line" />
@@ -381,12 +307,8 @@ def generate_actsurance_architecture_svg():
     print("Generated actsurance-architecture.svg")
 
 def main():
-    # 1. Fetch Stats
-    print("Fetching GitHub Stats...")
-    stats = fetch_github_stats()
-    
-    # 2. Generate Stats SVG
-    generate_stats_svg(stats)
+    # 1. Fetch Stats (no longer needed, skipping)
+    # 2. Generate Stats SVG (using dynamic ones now)
     
     # 3. Generate Terminal SVG
     generate_terminal_svg()

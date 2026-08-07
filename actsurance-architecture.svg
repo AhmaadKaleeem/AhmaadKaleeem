@@ -20,7 +20,7 @@
     </style>
     
     <rect width="800" height="400" fill="#000000" />
-    <text x="30" y="40" class="title">Actsurance Architecture (v5.1 Firewall-First)</text>
+    <text x="30" y="40" class="title">Actsurance Architecture</text>
     
     <!-- Flow Lines -->
     <path d="M 120 120 L 220 120" class="flow-line" />
