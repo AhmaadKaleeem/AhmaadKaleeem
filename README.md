@@ -1,8 +1,6 @@
 <div align="center">
-  <a href="https://www.ahmadkaleem.tech"><img src="./name.svg?v=10" alt="Ahmad Kaleem Bhatti" /></a>
-</div>
-
-<div align="center">
+  <a href="https://www.ahmadkaleem.tech"><img src="./name.svg?v=12" alt="Ahmad Kaleem Bhatti" /></a>
+  <br/>
   <a href="https://linkedin.com/in/ahmadkaleembhatti">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>

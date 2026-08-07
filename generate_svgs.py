@@ -140,10 +140,13 @@ def generate_name_svg():
             font-family: '{FONT_FAMILY}';
             font-weight: 700;
             font-size: 64px;
-            fill: {THEME_SIGNAL};
+            fill: #000000;
             opacity: 0;
             animation: textReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.2s;
             text-anchor: middle;
+        }}
+        @media (prefers-color-scheme: dark) {{
+            .name {{ fill: #FFFFFF; }}
         }}
         .glow {{
             fill: {THEME_ESCALATE};
@@ -162,7 +165,7 @@ def generate_name_svg():
         }}
     </style>
     
-    <rect width="800" height="150" fill="{THEME_VOID}" />
+    <rect width="800" height="150" fill="transparent" />
     
     <!-- Background Glow -->
     <ellipse cx="400" cy="75" rx="200" ry="40" class="glow" />
