@@ -59,5 +59,7 @@ Most production AI systems lack a deterministic control layer between AI agents 
   <img src="header-contact.svg?v=4" alt="Contact" />
 </div>
 
-- **Email:** ahmadkaleeem1@gmail.com
+- **Portfolio:** [ahmadkaleem.tech](https://www.ahmadkaleem.tech)
+- **LinkedIn:** [linkedin.com/in/ahmadkaleembhatti](https://linkedin.com/in/ahmadkaleembhatti)
+- **Email:** [ahmadkaleeem1@gmail.com](mailto:ahmadkaleeem1@gmail.com)
 - **Location:** Islamabad, Pakistan
