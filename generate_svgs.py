@@ -213,7 +213,7 @@ def generate_terminal_svg():
         </g>
         
         <g class="line2">
-            <text y="30" class="text highlight">Ahmad Kaleem Bhatti | AI Engineer and Backend Engineer</text>
+            <text y="30" class="text highlight">Ahmad Kaleem Bhatti | Backend Developer &amp; AI Engineer</text>
         </g>
         
         <g class="line3">
