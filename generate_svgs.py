@@ -135,46 +135,55 @@ def generate_header_svg(title, filename):
     print(f"Generated {filename}")
 
 def generate_name_svg():
-    """Generates a dynamic name SVG logo at the top"""
-    svg = f"""<svg width="800" height="150" viewBox="0 0 800 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+    """Generates a dynamic name SVG logo at the top with inline badges"""
+    svg = f"""<svg width="800" height="60" viewBox="0 0 800 60" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
         @import url('{FONT_URL}');
         .name {{
             font-family: '{FONT_FAMILY}';
             font-weight: 700;
-            font-size: 64px;
+            font-size: 24px;
             fill: #000000;
             opacity: 0;
             animation: textReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.2s;
-            text-anchor: middle;
+        }}
+        .badge-text {{
+            font-family: 'Verdana, Geneva, sans-serif';
+            font-size: 11px;
+            font-weight: normal;
+            fill: #FFFFFF;
         }}
         @media (prefers-color-scheme: dark) {{
             .name {{ fill: #FFFFFF; }}
         }}
-        .glow {{
-            fill: {THEME_ESCALATE};
-            filter: blur(12px);
-            opacity: 0.3;
-            animation: pulseGlow 4s infinite alternate;
+        .line {{
+            stroke: {THEME_ESCALATE};
+            stroke-width: 2;
         }}
         
         @keyframes textReveal {{
-            0% {{ opacity: 0; transform: translateY(20px); letter-spacing: -10px; filter: blur(8px); }}
-            100% {{ opacity: 1; transform: translateY(0); letter-spacing: -2px; filter: blur(0px); }}
-        }}
-        @keyframes pulseGlow {{
-            0% {{ opacity: 0.1; transform: scale(0.9); }}
-            100% {{ opacity: 0.5; transform: scale(1.1); }}
+            0% {{ opacity: 0; transform: translateX(-20px); filter: blur(4px); }}
+            100% {{ opacity: 1; transform: translateX(0); filter: blur(0px); }}
         }}
     </style>
     
-    <rect width="800" height="150" fill="transparent" />
+    <rect width="800" height="60" fill="transparent" />
     
-    <!-- Background Glow -->
-    <ellipse cx="400" cy="75" rx="200" ry="40" class="glow" />
+    <!-- Left Side: Dash, Name, Pipe -->
+    <line x1="10" y1="30" x2="80" y2="30" class="line" />
+    <text x="100" y="38" class="name">Ahmad Kaleem Bhatti</text>
+    <text x="420" y="36" font-family="{FONT_FAMILY}" font-size="28px" fill="#555">|</text>
     
-    <!-- Title -->
-    <text x="400" y="95" class="name">Ahmad Kaleem Bhatti</text>
+    <!-- Right Side: Badges -->
+    <g transform="translate(620, 18)">
+        <!-- LinkedIn Badge -->
+        <rect x="0" y="0" width="75" height="24" fill="#0A66C2" rx="0" />
+        <text x="37.5" y="16" class="badge-text" text-anchor="middle">LinkedIn</text>
+        
+        <!-- Portfolio Badge -->
+        <rect x="85" y="0" width="75" height="24" fill="#000000" rx="0" />
+        <text x="122.5" y="16" class="badge-text" text-anchor="middle">Portfolio</text>
+    </g>
 </svg>"""
     with open("name.svg", 'w') as f:
         f.write(svg)
