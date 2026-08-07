@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://www.ahmadkaleem.tech"><img src="./name.svg?v=13" alt="Ahmad Kaleem Bhatti" /></a>
+  <img src="./name.svg?v=14" alt="Ahmad Kaleem Bhatti" />
 </div>
 
 <div align="center">

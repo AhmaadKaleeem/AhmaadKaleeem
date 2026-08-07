@@ -136,7 +136,7 @@ def generate_header_svg(title, filename):
 
 def generate_name_svg():
     """Generates a dynamic name SVG logo at the top with inline badges"""
-    svg = f"""<svg width="800" height="60" viewBox="0 0 800 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    svg = f"""<svg width="800" height="60" viewBox="0 0 800 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <style>
         @import url('{FONT_URL}');
         .name {{
@@ -170,19 +170,25 @@ def generate_name_svg():
     <rect width="800" height="60" fill="transparent" />
     
     <!-- Left Side: Dash, Name, Pipe -->
-    <line x1="10" y1="30" x2="80" y2="30" class="line" />
-    <text x="100" y="38" class="name">Ahmad Kaleem Bhatti</text>
+    <a href="https://www.ahmadkaleem.tech" target="_blank">
+        <line x1="10" y1="30" x2="80" y2="30" class="line" />
+        <text x="100" y="38" class="name">Ahmad Kaleem Bhatti</text>
+    </a>
     <text x="420" y="36" font-family="{FONT_FAMILY}" font-size="28px" fill="#555">|</text>
     
     <!-- Right Side: Badges -->
     <g transform="translate(620, 18)">
         <!-- LinkedIn Badge -->
-        <rect x="0" y="0" width="75" height="24" fill="#0A66C2" rx="0" />
-        <text x="37.5" y="16" class="badge-text" text-anchor="middle">LinkedIn</text>
+        <a href="https://linkedin.com/in/ahmadkaleembhatti" target="_blank">
+            <rect x="0" y="0" width="75" height="24" fill="#0A66C2" rx="0" />
+            <text x="37.5" y="16" class="badge-text" text-anchor="middle">LinkedIn</text>
+        </a>
         
         <!-- Portfolio Badge -->
-        <rect x="85" y="0" width="75" height="24" fill="#000000" rx="0" />
-        <text x="122.5" y="16" class="badge-text" text-anchor="middle">Portfolio</text>
+        <a href="https://www.ahmadkaleem.tech" target="_blank">
+            <rect x="85" y="0" width="75" height="24" fill="#000000" rx="0" />
+            <text x="122.5" y="16" class="badge-text" text-anchor="middle">Portfolio</text>
+        </a>
     </g>
 </svg>"""
     with open("name.svg", 'w') as f:
