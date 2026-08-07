@@ -7,7 +7,7 @@ THEME_SIGNAL = "#FFFFFF"
 THEME_ALLOW = "#059D00"
 THEME_ESCALATE = "#DF6513"
 FONT_FAMILY = "Courier Prime, monospace"
-FONT_URL = "https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
+FONT_URL = "https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
 
 # GitHub GraphQL Setup
 GH_TOKEN = os.getenv('GH_TOKEN')
@@ -170,7 +170,7 @@ def generate_terminal_svg():
         </g>
         
         <g class="line2">
-            <text y="30" class="text highlight">Ahmad Kaleem Bhatti | Founder &amp; AI Security Engineer</text>
+            <text y="30" class="text highlight">Ahmad Kaleem Bhatti | AI Engineer & Backend Developer</text>
         </g>
         
         <g class="line3">
@@ -178,9 +178,9 @@ def generate_terminal_svg():
         </g>
         
         <g class="line4">
-            <text y="100" class="text highlight">Building deterministic control layers for autonomous agents.</text>
-            <rect x="540" y="85" width="10" height="18" class="cursor">
-                <animate attributeName="x" values="540;540;540" keyTimes="0;0.5;1" dur="2s" repeatCount="indefinite"/>
+            <text y="100" class="text highlight">Building deterministic security infrastructure for AI agents.</text>
+            <rect x="620" y="85" width="10" height="18" class="cursor">
+                <animate attributeName="x" values="620;620;620" keyTimes="0;0.5;1" dur="2s" repeatCount="indefinite"/>
             </rect>
         </g>
     </g>
@@ -263,6 +263,80 @@ def generate_stats_svg(stats):
         f.write(svg)
     print("Generated stats.svg")
 
+def generate_actsurance_architecture_svg():
+    """Generates an animated architecture diagram for Actsurance"""
+    svg = f"""<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @import url('{FONT_URL}');
+        text {{ font-family: '{FONT_FAMILY}'; fill: {THEME_SIGNAL}; font-size: 14px; }}
+        .title {{ font-size: 20px; font-weight: bold; fill: {THEME_ESCALATE}; }}
+        .box {{ fill: #0A080C; stroke: {THEME_ALLOW}; stroke-width: 1.5; rx: 6; }}
+        .box-escalate {{ fill: #0A080C; stroke: {THEME_ESCALATE}; stroke-width: 1.5; rx: 6; }}
+        
+        /* Flow animations */
+        .flow-line {{ stroke: {THEME_ALLOW}; stroke-width: 2; stroke-dasharray: 6 6; animation: flow 20s linear infinite; opacity: 0.6; }}
+        .flow-line-escalate {{ stroke: {THEME_ESCALATE}; stroke-width: 2; stroke-dasharray: 6 6; animation: flow 20s linear infinite; opacity: 0.6; }}
+        
+        @keyframes flow {{ to {{ stroke-dashoffset: -400; }} }}
+        
+        .pulse {{ animation: pulseNode 3s infinite alternate; }}
+        @keyframes pulseNode {{
+            0% {{ filter: drop-shadow(0 0 2px {THEME_ALLOW}); }}
+            100% {{ filter: drop-shadow(0 0 8px {THEME_ALLOW}); }}
+        }}
+    </style>
+    
+    <rect width="800" height="400" fill="{THEME_VOID}" />
+    <text x="30" y="40" class="title">Actsurance Architecture (v5.1 Firewall-First)</text>
+    
+    <!-- Flow Lines -->
+    <path d="M 120 120 L 220 120" class="flow-line" />
+    <path d="M 340 120 L 440 120" class="flow-line" />
+    <path d="M 560 120 L 660 120" class="flow-line" />
+    <path d="M 500 140 L 500 240 L 560 240" class="flow-line-escalate" />
+    <path d="M 620 280 L 620 320" class="flow-line-escalate" />
+    <path d="M 680 240 L 720 240 L 720 140 L 680 140" class="flow-line" style="animation-direction: reverse;" />
+    
+    <!-- Nodes -->
+    <!-- Client -->
+    <rect x="20" y="90" width="100" height="60" class="box" />
+    <text x="35" y="115">AI Agent</text>
+    <text x="35" y="135" style="font-size: 10px; opacity: 0.7;">Tool Call</text>
+    
+    <!-- TIER 1 -->
+    <rect x="220" y="80" width="120" height="150" class="box pulse" />
+    <text x="240" y="105" style="font-weight: bold; fill: {THEME_ESCALATE};">L1 Firewall</text>
+    <text x="235" y="130" style="font-size: 12px;">RE2 Regex</text>
+    <text x="235" y="150" style="font-size: 12px;">Identity JWT</text>
+    <text x="235" y="170" style="font-size: 12px;">Rate Limiter</text>
+    <text x="235" y="210" style="font-size: 10px; fill: #DF6513;">[403 HARD DENY]</text>
+    
+    <!-- Splitter -->
+    <rect x="440" y="90" width="120" height="80" class="box" />
+    <text x="455" y="115" style="font-weight: bold; fill: {THEME_ESCALATE};">Splitter</text>
+    <text x="455" y="135" style="font-size: 12px;">OPA (RBAC)</text>
+    <text x="455" y="155" style="font-size: 12px;">ONNX (Risk)</text>
+    
+    <!-- Fast Path -->
+    <rect x="660" y="90" width="120" height="60" class="box" />
+    <text x="675" y="115" style="font-weight: bold;">Fast Path</text>
+    <text x="675" y="135" style="font-size: 12px;">Sealed Broker</text>
+    
+    <!-- Slow Path -->
+    <rect x="560" y="210" width="120" height="70" class="box-escalate" />
+    <text x="575" y="235" style="font-weight: bold; fill: {THEME_ESCALATE};">Slow Path</text>
+    <text x="575" y="255" style="font-size: 12px;">Temporal Workflow</text>
+    <text x="575" y="270" style="font-size: 12px;">Human Review</text>
+    
+    <!-- Verification -->
+    <rect x="560" y="320" width="120" height="60" class="box" style="stroke: #555;" />
+    <text x="570" y="345">Postgres Audit</text>
+    <text x="570" y="365" style="font-size: 12px;">Offline Verifier</text>
+</svg>"""
+    with open("actsurance-architecture.svg", 'w') as f:
+        f.write(svg)
+    print("Generated actsurance-architecture.svg")
+
 def main():
     # 1. Fetch Stats
     print("Fetching GitHub Stats...")
@@ -287,6 +361,11 @@ def main():
     
     for filename, title in headers.items():
         generate_header_svg(title, filename)
+        
+    # Generate Actsurance Architecture SVG
+    generate_actsurance_architecture_svg()
+    
+    print("All SVGs generated successfully.")
 
 if __name__ == "__main__":
     main()

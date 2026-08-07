@@ -1,6 +1,6 @@
 <svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
         .bg { fill: #000000; }
         .border { stroke: #DF6513; stroke-width: 1; stroke-opacity: 0.5; }
         .text { font-family: 'Courier Prime, monospace'; font-size: 18px; fill: #FFFFFF; }
@@ -35,7 +35,7 @@
         </g>
         
         <g class="line2">
-            <text y="30" class="text highlight">Ahmad Kaleem Bhatti | Founder &amp; AI Security Engineer</text>
+            <text y="30" class="text highlight">Ahmad Kaleem Bhatti | AI Engineer & Backend Developer</text>
         </g>
         
         <g class="line3">
@@ -43,9 +43,9 @@
         </g>
         
         <g class="line4">
-            <text y="100" class="text highlight">Building deterministic control layers for autonomous agents.</text>
-            <rect x="540" y="85" width="10" height="18" class="cursor">
-                <animate attributeName="x" values="540;540;540" keyTimes="0;0.5;1" dur="2s" repeatCount="indefinite"/>
+            <text y="100" class="text highlight">Building deterministic security infrastructure for AI agents.</text>
+            <rect x="620" y="85" width="10" height="18" class="cursor">
+                <animate attributeName="x" values="620;620;620" keyTimes="0;0.5;1" dur="2s" repeatCount="indefinite"/>
             </rect>
         </g>
     </g>
