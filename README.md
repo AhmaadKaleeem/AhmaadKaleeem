@@ -6,6 +6,10 @@
   <p>Founder @ <a href="https://actsurance.qualixofficial.com">Actsurance</a> • AI Engineer • CS @ Air University Islamabad</p>
 </div>
 
+<div align="center">
+  <img src="./terminal.svg" alt="Terminal Intro" />
+</div>
+
 ---
 
 <div align="center">

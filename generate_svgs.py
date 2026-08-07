@@ -109,6 +109,48 @@ def generate_header_svg(title, filename):
         f.write(svg)
     print(f"Generated {filename}")
 
+def generate_terminal_svg():
+    """Generates an animated terminal intro"""
+    svg = f"""<svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @import url('{FONT_URL}');
+        .bg {{ fill: {THEME_VOID}; }}
+        .border {{ stroke: {THEME_ESCALATE}; stroke-width: 1; stroke-opacity: 0.5; }}
+        .text {{ font-family: '{FONT_FAMILY}'; font-size: 18px; fill: {THEME_SIGNAL}; }}
+        .prompt {{ fill: {THEME_ESCALATE}; font-weight: 700; }}
+        .cursor {{ fill: {THEME_ALLOW}; animation: blink 1s step-end infinite; }}
+        .typing1 {{ stroke: transparent; animation: typing1 2s steps(40, end) forwards; white-space: nowrap; overflow: hidden; display: inline-block; width: 0; }}
+        
+        @keyframes blink {{ 0%, 100% {{ opacity: 1; }} 50% {{ opacity: 0; }} }}
+        @keyframes typing1 {{ from {{ width: 0; }} to {{ width: 100%; }} }}
+    </style>
+    
+    <!-- Window -->
+    <rect x="5" y="5" width="790" height="190" rx="6" class="bg border" />
+    <!-- Top Bar -->
+    <rect x="5" y="5" width="790" height="30" rx="6" fill="#111" class="border" />
+    <circle cx="20" cy="20" r="6" fill="#FF5F56" />
+    <circle cx="40" cy="20" r="6" fill="#FFBD2E" />
+    <circle cx="60" cy="20" r="6" fill="#27C93F" />
+    <text x="350" y="22" class="text" style="font-size: 14px; opacity: 0.5;">bash - actsurance</text>
+
+    <!-- Terminal Content -->
+    <g transform="translate(20, 65)">
+        <text y="0" class="text">
+            <tspan class="prompt">ahmad@secure-node:~$</tspan> whoami
+        </text>
+        <text y="30" class="text" style="fill: {THEME_ALLOW};">Ahmad Kaleem Bhatti | AI Security Engineer</text>
+        <text y="70" class="text">
+            <tspan class="prompt">ahmad@secure-node:~$</tspan> cat current_mission.txt
+        </text>
+        <text y="100" class="text" style="fill: {THEME_ALLOW};">Building deterministic control layers for autonomous agents.</text>
+        <rect x="540" y="85" width="10" height="18" class="cursor" />
+    </g>
+</svg>"""
+    with open("terminal.svg", 'w') as f:
+        f.write(svg)
+    print("Generated terminal.svg")
+
 def generate_stats_svg(stats):
     """Generates an SVG for GitHub Stats"""
     if not stats:
@@ -191,7 +233,10 @@ def main():
     # 2. Generate Stats SVG
     generate_stats_svg(stats)
     
-    # 3. Generate Header SVGs
+    # 3. Generate Terminal SVG
+    generate_terminal_svg()
+    
+    # 4. Generate Header SVGs
     headers = {
         "header-about.svg": "About Me",
         "header-building.svg": "What I'm Building",
