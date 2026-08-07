@@ -1,5 +1,9 @@
 <div align="center">
-  <img src="./terminal.svg?v=8" alt="Identity" />
+  <a href="https://www.ahmadkaleem.tech"><img src="./name.svg?v=9" alt="Ahmad Kaleem Bhatti" /></a>
+</div>
+
+<div align="center">
+  <img src="./terminal.svg?v=9" alt="Identity" />
 </div>
 
 <div align="center">
@@ -93,10 +97,18 @@ Open Policy Agent (OPA), Cedar, RBAC, mTLS, JWT, Vault
 </details>
 
 <div align="center">
-  <img src="./header-contact.svg?v=8" alt="Contact" />
+  <img src="./header-contact.svg?v=9" alt="Contact" />
 </div>
 
-- **Portfolio** [ahmadkaleem.tech](https://www.ahmadkaleem.tech)
-- **LinkedIn** [linkedin.com/in/ahmadkaleembhatti](https://linkedin.com/in/ahmadkaleembhatti)
-- **Email** [ahmadkaleeem1@gmail.com](mailto:ahmadkaleeem1@gmail.com)
-- **Location** Islamabad, Pakistan
+<div align="center">
+  <a href="https://www.ahmadkaleem.tech">
+    <img src="https://img.shields.io/badge/ahmadkaleem.tech-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
+  </a>
+  <a href="https://linkedin.com/in/ahmadkaleembhatti">
+    <img src="https://img.shields.io/badge/ahmadkaleembhatti-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="mailto:ahmadkaleeem1@gmail.com">
+    <img src="https://img.shields.io/badge/ahmadkaleeem1@gmail.com-DF6513?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  <img src="https://img.shields.io/badge/Islamabad_Pakistan-059D00?style=for-the-badge&logo=googlemaps&logoColor=white" alt="Location" />
+</div>

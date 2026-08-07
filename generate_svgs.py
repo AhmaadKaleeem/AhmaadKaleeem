@@ -131,6 +131,49 @@ def generate_header_svg(title, filename):
         f.write(svg)
     print(f"Generated {filename}")
 
+def generate_name_svg():
+    """Generates a dynamic name SVG logo at the top"""
+    svg = f"""<svg width="800" height="150" viewBox="0 0 800 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @import url('{FONT_URL}');
+        .name {{
+            font-family: '{FONT_FAMILY}';
+            font-weight: 700;
+            font-size: 64px;
+            fill: {THEME_SIGNAL};
+            opacity: 0;
+            animation: textReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.2s;
+            text-anchor: middle;
+        }}
+        .glow {{
+            fill: {THEME_ESCALATE};
+            filter: blur(12px);
+            opacity: 0.3;
+            animation: pulseGlow 4s infinite alternate;
+        }}
+        
+        @keyframes textReveal {{
+            0% {{ opacity: 0; transform: translateY(20px); letter-spacing: -10px; filter: blur(8px); }}
+            100% {{ opacity: 1; transform: translateY(0); letter-spacing: -2px; filter: blur(0px); }}
+        }}
+        @keyframes pulseGlow {{
+            0% {{ opacity: 0.1; transform: scale(0.9); }}
+            100% {{ opacity: 0.5; transform: scale(1.1); }}
+        }}
+    </style>
+    
+    <rect width="800" height="150" fill="{THEME_VOID}" />
+    
+    <!-- Background Glow -->
+    <ellipse cx="400" cy="75" rx="200" ry="40" class="glow" />
+    
+    <!-- Title -->
+    <text x="400" y="95" class="name">Ahmad Kaleem Bhatti</text>
+</svg>"""
+    with open("name.svg", 'w') as f:
+        f.write(svg)
+    print("Generated name.svg")
+
 def generate_terminal_svg():
     """Generates a highly animated terminal intro"""
     svg = f"""<svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -161,7 +204,7 @@ def generate_terminal_svg():
     <circle cx="20" cy="20" r="6" fill="#FF5F56" />
     <circle cx="40" cy="20" r="6" fill="#FFBD2E" />
     <circle cx="60" cy="20" r="6" fill="#27C93F" />
-    <text x="350" y="22" class="text" style="font-size: 14px; opacity: 0.5;">bash - actsurance</text>
+    <text x="350" y="22" class="text" style="font-size: 14px; opacity: 0.5;">bash - ahmad</text>
 
     <!-- Terminal Content -->
     <g transform="translate(20, 65)">
@@ -170,7 +213,7 @@ def generate_terminal_svg():
         </g>
         
         <g class="line2">
-            <text y="30" class="text highlight">Ahmad Kaleem Bhatti | Backend and Security Engineer</text>
+            <text y="30" class="text highlight">Ahmad Kaleem Bhatti | AI Engineer and Backend Engineer</text>
         </g>
         
         <g class="line3">
@@ -364,6 +407,9 @@ def main():
         
     # Generate Actsurance Architecture SVG
     generate_actsurance_architecture_svg()
+    
+    # Generate Name SVG
+    generate_name_svg()
     
     print("All SVGs generated successfully.")
 
