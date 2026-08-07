@@ -31,21 +31,21 @@
     <!-- Terminal Content -->
     <g transform="translate(20, 65)">
         <g class="line1">
-            <text y="0" class="text"><tspan class="prompt">ahmad@secure-node:~$</tspan> whoami</text>
+            <text y="0" class="text"><tspan class="prompt">ahmad@secure-node ~$</tspan> whoami</text>
         </g>
         
         <g class="line2">
-            <text y="30" class="text highlight">Ahmad Kaleem Bhatti | AI Engineer & Backend Developer</text>
+            <text y="30" class="text highlight">Ahmad Kaleem Bhatti | Backend and Security Engineer</text>
         </g>
         
         <g class="line3">
-            <text y="70" class="text"><tspan class="prompt">ahmad@secure-node:~$</tspan> cat current_mission.txt</text>
+            <text y="70" class="text"><tspan class="prompt">ahmad@secure-node ~$</tspan> cat current_mission.txt</text>
         </g>
         
         <g class="line4">
-            <text y="100" class="text highlight">Building deterministic security infrastructure for AI agents.</text>
-            <rect x="620" y="85" width="10" height="18" class="cursor">
-                <animate attributeName="x" values="620;620;620" keyTimes="0;0.5;1" dur="2s" repeatCount="indefinite"/>
+            <text y="100" class="text highlight">Building deterministic security infrastructure for automated agents.</text>
+            <rect x="660" y="85" width="10" height="18" class="cursor">
+                <animate attributeName="x" values="660;660;660" keyTimes="0;0.5;1" dur="2s" repeatCount="indefinite"/>
             </rect>
         </g>
     </g>

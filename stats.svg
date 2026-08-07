@@ -36,7 +36,7 @@
     <rect x="5" y="5" width="790" height="240" rx="8" fill="none" class="border-glow" />
     
     <!-- Title -->
-    <text x="40" y="45" class="header">&gt; SYSTEM_STATS: AhmaadKaleeem</text>
+    <text x="40" y="45" class="header">&gt; SYSTEM_STATS AhmaadKaleeem</text>
     <line x1="40" y1="60" x2="760" y2="60" class="border-solid" style="opacity: 0.3;" />
     
     <!-- Stat: Commits -->
