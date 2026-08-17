@@ -12,7 +12,7 @@
 
 <div align="center">
   <img src="./stats.svg?v=10" alt="GitHub Stats" height="195" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=AhmaadKaleeem&theme=dark&background=000000&ring=DF6513&fire=DF6513&currStreakNum=059D00&currStreakLabel=DF6513&sideNums=FFFFFF&sideLabels=FFFFFF&dates=FFFFFF&hide_border=true" alt="GitHub Streak" height="195" />
+  <img src="https://streak-stats.demolab.com/?user=AhmaadKaleeem&theme=dark&background=000000&ring=DF6513&fire=DF6513&currStreakNum=059D00&currStreakLabel=DF6513&sideNums=FFFFFF&sideLabels=FFFFFF&dates=FFFFFF&hide_border=true" alt="GitHub Streak" height="195" />
 </div>
 
 <br/>
