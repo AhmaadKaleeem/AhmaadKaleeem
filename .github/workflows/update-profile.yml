@@ -29,6 +29,13 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: python generate_svgs.py 
 
+      - name: Generate streak stats
+        uses: DenverCoder1/github-readme-streak-stats@main
+        with:
+          options: user=AhmaadKaleeem&theme=dark&background=000000&ring=DF6513&fire=DF6513&currStreakNum=059D00&currStreakLabel=DF6513&sideNums=FFFFFF&sideLabels=FFFFFF&dates=FFFFFF&hide_border=true
+          path: streak.svg
+          token: ${{ secrets.GH_TOKEN }}
+
       - name: Commit and Push changes
         run: |
           git config --local user.email "action@github.com"
