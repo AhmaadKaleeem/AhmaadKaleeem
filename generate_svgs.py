@@ -199,14 +199,16 @@ def generate_terminal_svg():
         .text {{ font-family: '{FONT_FAMILY}'; font-size: 18px; fill: {THEME_SIGNAL}; }}
         .prompt {{ fill: {THEME_ESCALATE}; font-weight: 700; }}
         .highlight {{ fill: {THEME_ALLOW}; font-weight: 700; }}
-        .cursor {{ fill: {THEME_ALLOW}; animation: blink 1s step-end infinite; }}
+        .cursor {{ fill: {THEME_ALLOW}; animation: blink 0.8s step-end infinite; }}
         
-        /* Animation delays for lines */
-        .line1, .line2, .line3, .line4 {{ opacity: 0; }}
-        .line1 {{ animation: fadeIn 0.1s forwards 0.5s; }}
-        .line2 {{ animation: fadeIn 0.1s forwards 1.5s; }}
-        .line3 {{ animation: fadeIn 0.1s forwards 3.0s; }}
-        .line4 {{ animation: fadeIn 0.1s forwards 4.0s; }}
+        /* Typing animation effects */
+        .type-line {{ overflow: hidden; white-space: nowrap; }}
+        
+        .line1 {{ opacity: 0; animation: fadeIn 0.1s forwards 0.5s; }}
+        .line2 {{ opacity: 0; animation: fadeIn 0.1s forwards 1.2s; }}
+        .line3 {{ opacity: 0; animation: fadeIn 0.1s forwards 2.0s; }}
+        .line4 {{ opacity: 0; animation: fadeIn 0.1s forwards 2.8s; }}
+        .line5 {{ opacity: 0; animation: fadeIn 0.1s forwards 3.6s; }}
         
         @keyframes blink {{ 0%, 100% {{ opacity: 1; }} 50% {{ opacity: 0; }} }}
         @keyframes fadeIn {{ to {{ opacity: 1; }} }}
@@ -219,33 +221,148 @@ def generate_terminal_svg():
     <circle cx="20" cy="20" r="6" fill="#FF5F56" />
     <circle cx="40" cy="20" r="6" fill="#FFBD2E" />
     <circle cx="60" cy="20" r="6" fill="#27C93F" />
-    <text x="350" y="22" class="text" style="font-size: 14px; opacity: 0.5;">bash - ahmad</text>
+    <text x="350" y="22" class="text" style="font-size: 14px; opacity: 0.5;">bash - ahmad - 80x24</text>
 
     <!-- Terminal Content -->
     <g transform="translate(20, 65)">
         <g class="line1">
-            <text y="0" class="text"><tspan class="prompt">ahmad@secure-node ~$</tspan> whoami</text>
+            <text y="0" class="text"><tspan class="prompt">ahmad@Actsurance ~$</tspan> whoami</text>
         </g>
         
         <g class="line2">
-            <text y="30" class="text highlight">Ahmad Kaleem Bhatti | Backend Developer &amp; AI Engineer</text>
+            <text y="30" class="text highlight">Ahmad Kaleem Bhatti | AI Engineer &amp; Backend Developer</text>
         </g>
         
         <g class="line3">
-            <text y="70" class="text"><tspan class="prompt">ahmad@secure-node ~$</tspan> cat current_mission.txt</text>
+            <text y="60" class="text"><tspan class="prompt">ahmad@Actsurance ~$</tspan> cat current_mission.txt</text>
         </g>
         
         <g class="line4">
-            <text y="100" class="text highlight">Building deterministic security infrastructure for automated agents.</text>
-            <rect x="660" y="85" width="10" height="18" class="cursor">
-                <animate attributeName="x" values="660;660;660" keyTimes="0;0.5;1" dur="2s" repeatCount="indefinite"/>
-            </rect>
+            <text y="90" class="text highlight">Building deterministic security infrastructure for AI agents.</text>
+        </g>
+
+        <g class="line5">
+            <text y="120" class="text"><tspan class="prompt">ahmad@Actsurance ~$</tspan></text>
+            <rect x="195" y="105" width="10" height="18" class="cursor" />
         </g>
     </g>
 </svg>"""
     with open("terminal.svg", 'w') as f:
         f.write(svg)
     print("Generated terminal.svg")
+
+import math
+
+def generate_radar_svg():
+    """Generates an animated SVG Radar Chart for Skills"""
+    skills = [
+        ("Python & FastAPI", 95),
+        ("AI Agents & Tooling", 90),
+        ("Go & Backend", 85),
+        ("Security (OPA, mTLS)", 88),
+        ("PostgreSQL & Redis", 85),
+        ("React & TypeScript", 80),
+        ("Flutter", 75),
+        ("DevOps & Docker", 70)
+    ]
+    
+    cx, cy = 400, 200
+    max_radius = 120
+    num_sides = len(skills)
+    angle_step = 2 * math.pi / num_sides
+    
+    # Calculate polygon points
+    points = []
+    labels = ""
+    for i, (name, value) in enumerate(skills):
+        angle = i * angle_step - math.pi / 2
+        r = max_radius * (value / 100)
+        x = cx + r * math.cos(angle)
+        y = cy + r * math.sin(angle)
+        points.append(f"{x},{y}")
+        
+        # Label coordinates
+        lx = cx + (max_radius + 40) * math.cos(angle)
+        ly = cy + (max_radius + 20) * math.sin(angle)
+        text_anchor = "middle"
+        if math.cos(angle) > 0.1: text_anchor = "start"
+        elif math.cos(angle) < -0.1: text_anchor = "end"
+        
+        labels += f'<text x="{lx}" y="{ly}" class="label" text-anchor="{text_anchor}">{name}</text>\n'
+        
+    poly_points = " ".join(points)
+    
+    svg = f"""<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @import url('{FONT_URL}');
+        .radar-bg {{ fill: {THEME_VOID}; }}
+        .grid-line {{ stroke: rgba(255, 255, 255, 0.1); stroke-width: 1; fill: none; }}
+        .axis-line {{ stroke: rgba(255, 255, 255, 0.2); stroke-width: 1; }}
+        .radar-poly {{
+            fill: rgba(5, 157, 0, 0.3);
+            stroke: {THEME_ALLOW};
+            stroke-width: 2;
+            animation: radarPulse 3s infinite alternate;
+        }}
+        .node {{ fill: {THEME_ALLOW}; }}
+        .label {{ font-family: '{FONT_FAMILY}'; font-size: 13px; fill: {THEME_SIGNAL}; font-weight: bold; }}
+        .title {{ font-family: '{FONT_FAMILY}'; font-size: 20px; font-weight: bold; fill: {THEME_ESCALATE}; }}
+        
+        @keyframes radarPulse {{
+            0% {{ filter: drop-shadow(0 0 5px {THEME_ALLOW}); transform: scale(1); transform-origin: 400px 200px; }}
+            100% {{ filter: drop-shadow(0 0 15px {THEME_ALLOW}); transform: scale(1.02); transform-origin: 400px 200px; }}
+        }}
+        
+        .axis-group {{ opacity: 0; animation: fadeIn 1s forwards 0.5s; }}
+        .radar-poly {{ stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawRadar 1.5s forwards 1s, radarPulse 3s infinite alternate 2.5s; }}
+        
+        @keyframes drawRadar {{ to {{ stroke-dashoffset: 0; }} }}
+        @keyframes fadeIn {{ to {{ opacity: 1; }} }}
+    </style>
+    
+    <rect width="800" height="400" class="radar-bg" />
+    <text x="30" y="40" class="title">&gt; SKILL_RADAR.exe</text>
+    
+    <!-- Grid -->
+    <g class="axis-group">
+"""
+    
+    # Draw concentric grid polygons
+    for level in range(1, 5):
+        r = max_radius * (level / 4)
+        grid_pts = []
+        for i in range(num_sides):
+            angle = i * angle_step - math.pi / 2
+            gx = cx + r * math.cos(angle)
+            gy = cy + r * math.sin(angle)
+            grid_pts.append(f"{gx},{gy}")
+        svg += f'        <polygon points="{" ".join(grid_pts)}" class="grid-line" />\n'
+        
+    # Draw axis lines
+    for i in range(num_sides):
+        angle = i * angle_step - math.pi / 2
+        ax = cx + max_radius * math.cos(angle)
+        ay = cy + max_radius * math.sin(angle)
+        svg += f'        <line x1="{cx}" y1="{cy}" x2="{ax}" y2="{ay}" class="axis-line" />\n'
+        
+    svg += f"""
+        {labels}
+    </g>
+    
+    <!-- Data Polygon -->
+    <polygon points="{poly_points}" class="radar-poly" />
+    
+    <!-- Nodes -->
+"""
+    for pt in points:
+        x, y = pt.split(",")
+        svg += f'    <circle cx="{x}" cy="{y}" r="4" class="node" />\n'
+        
+    svg += "</svg>"
+    
+    with open("radar.svg", 'w') as f:
+        f.write(svg)
+    print("Generated radar.svg")
 
 def generate_stats_svg(stats):
     """Generates an incredibly animated SVG for GitHub Stats"""
@@ -420,6 +537,9 @@ def main():
     for filename, title in headers.items():
         generate_header_svg(title, filename)
         
+    # Generate Radar SVG
+    generate_radar_svg()
+    
     # Generate Actsurance Architecture SVG
     generate_actsurance_architecture_svg()
     

@@ -17,15 +17,27 @@
 
 <br/>
 
+<div align="center">
+  <img src="./radar.svg?v=1" alt="Skill Radar" height="300" />
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contributions Graph" />
+</div>
+
+<br/>
+
 <img src="./header-building.svg?v=8" alt="Evidence" />
 
-### [Actsurance](https://actsurance.qualixofficial.com) | Zero-Trust Policy Gateway for Software Agents
+### [Actsurance](https://www.ahmadkaleem.tech/case/actsurance) | Zero-Trust Policy Gateway for AI Agents
 
-**The Engineering Problem**
-Automated agents are frequently given access to real business tools like email and databases. Most production setups lack a deterministic control layer between the language model and the external tools. A system tricked by a prompt injection attack can execute a destructive tool call with no structural barrier to stop it.
+**The Problem**
+AI agents frequently interact with production systems without deterministic access control. A prompt injection attack that tricks an agent can result in destructive tool calls with no structural barrier to prevent data mutation. 
 
 **The Solution**
-Actsurance is a security infrastructure platform that intercepts every tool request before execution. It acts like an airport security checkpoint enforcing identity, running structural policy evaluations, and utilizing machine learning risk models to determine whether a tool call should be allowed, blocked, or escalated to a human supervisor.
+Actsurance is a fail-closed security gateway that sits between AI agents and external APIs. It acts as a strict policy enforcer, evaluating structural rules and utilizing ONNX-based risk models to determine if a tool call should be allowed, denied, or escalated to a human reviewer.
 
 <br/>
 
@@ -36,47 +48,67 @@ Actsurance is a security infrastructure platform that intercepts every tool requ
 <br/>
 
 <details>
-<summary><b>View Technical Architecture and Implementation</b></summary>
+<summary><b>View Architecture & Implementation</b></summary>
 <br/>
 
-Actsurance is a layered security pipeline that intercepts every tool call. It acts as a deterministic policy enforcement layer, evaluating structural rules and routing requests asynchronously for human review when necessary. The core logic focuses on isolating AI agent inferences from critical external system writes, preventing prompt injection attacks from mutating data.
+- **L1 Firewall**: Uses the RE2 regex engine to inspect payloads for SQL injection and XSS patterns, returning a 403 instantly on a match.
+- **Deterministic Policy Enforcement**: Evaluates requests using Open Policy Agent (OPA) against strict RBAC rules.
+- **The Sealed Broker Pattern**: Retrieves secrets from a local cache and injects them into outbound requests, ensuring the AI agent never sees raw credentials.
+- **Cryptographic Receipts**: Every allowed action generates an Ed25519-signed, hash-chained audit trail persisted in PostgreSQL.
+- **Fail-Closed Design**: If the ONNX risk engine or any core component fails, the gateway defaults to DENY or ESCALATE.
 
 </details>
 
 <br/>
 
-### Qualix | Automated Lead Qualification Pipeline
+### [Qualix](https://www.ahmadkaleem.tech/case/qualix) | Agentic Lead Qualification Pipeline
 
-A backend service automating lead qualification across WhatsApp and Instagram using retrieval-augmented generation and CRM tool-calling.
+An automated lead qualification backend for WhatsApp, Instagram, and Telegram using Retrieval-Augmented Generation (RAG) and CRM tool-calling.
 
-**The Engineering Problem** Lead qualification is a multi-step workflow. A language model call might succeed while a CRM update fails due to rate limits. A monolithic queue silently drops failed steps, resulting in dropped leads.
+**The Problem**
+Sales teams lose deals due to slow response times, and manual follow-up doesn't scale. Additionally, monolithic systems often drop leads entirely if a single step (like a CRM update) fails.
 
 <details>
-<summary><b>View Technical Implementation</b></summary>
+<summary><b>View Architecture & Implementation</b></summary>
 <br/>
 
-- **Architecture** Developed a **FastAPI** backend with async **SQLAlchemy 2.0**.
-- **Decoupled Failures** Utilized **Celery** and **Redis 7** for independent task retries, separating LLM calls from CRM writes.
-- **Workflow Orchestration** Implemented **LangChain** and **ChromaDB** to retrieve business context locally rather than stuffing context windows, routing LLM requests dynamically across OpenRouter, OpenAI, and Nvidia NIM based on cost capability.
+- **Architecture**: Developed a backend in FastAPI with async SQLAlchemy and PostgreSQL 16.
+- **Decoupled Workflows**: LLM inferences and CRM writes fail independently. Utilized Redis 7 and Celery to separate these steps into reliable, independently retriable queues.
+- **RAG Implementation**: Integrated LangChain and ChromaDB to retrieve necessary business context locally rather than stuffing context windows, reducing cost and latency. 
+- **Dynamic Routing**: LLM requests route across OpenRouter, OpenAI, and Nvidia NIM based on cost and capability.
 
 </details>
+
+<img src="./header-projects.svg?v=8" alt="Experience" />
+
+### Demetronics (Private) Limited | Full Stack Engineer Intern
+*Aug 2026 – Sep 2026 | Islamabad, Pakistan*
+- Architected and executed a system-wide migration from direct client-to-database writes to a centralized Express.js REST API.
+- Implemented role-based access control (RBAC), Zod parameter validation, and an immutable audit logging system to secure IoT device actuations.
+- Audited the legacy codebase, remediating exposed production secrets and securing the CI/CD pipeline.
+
+### Kaar-e-Kamal Welfare Foundation | Application Developer Intern
+*Jul 2026 – Aug 2026 | Islamabad, Pakistan*
+- Developed the MVP for a unified welfare-services platform serving multiple NGO roles (Admin, Field Worker, Beneficiary).
+- Built a modular Go backend (`net/http`) connected to Supabase PostgreSQL, featuring Redis rate-limiting and strict server-side role validation.
+- Engineered offline-first capabilities in Flutter, enabling field workers to cache case data locally and sync automatically upon network reconnection.
 
 <img src="./header-stack.svg?v=8" alt="Technical Focus" />
 
-### Systems and Orchestration
-LangChain, Retrieval-Augmented Generation, ChromaDB, ONNX, Tool Calling
+### Systems & Orchestration
+LangChain, RAG, ChromaDB, ONNX, Tool Calling
 
-### Backend and Infrastructure
-FastAPI, Python, Go, TypeScript, PostgreSQL, Redis, Celery, Docker, Temporal
+### Backend & Infrastructure
+FastAPI, Python, Go, TypeScript, PostgreSQL, Redis, Celery, Docker
 
-### Security and Identity
-Open Policy Agent (OPA), Cedar, RBAC, mTLS, JWT, Vault
+### Security & Identity
+Open Policy Agent (OPA), RBAC, mTLS, JWT, Vault
 
 <img src="./header-background.svg?v=8" alt="Engineering Approach" />
 
-- **Fail-Closed Execution** Systems must default to `ESCALATE` rather than `ALLOW`. If the ONNX risk model crashes, the fast path stops safely.
-- **Decoupled Failures** External API writes and inferences fail independently and at different rates. They require separate retry queues.
-- **Structural Enforcement** Defending against prompt injection is a structural problem, not a prompt engineering problem. OPA policies evaluating structured JSON tool schemas outrank probabilistic intent.
+- **Fail-Closed Execution**: Security systems must default to `ESCALATE` or `DENY`. If a risk model crashes, the fast path stops safely.
+- **Decoupled Failures**: External API writes and model inferences fail at different rates and require separate retry queues.
+- **Structural Enforcement**: Defending against prompt injections is a structural problem, not a prompt engineering problem. OPA policies evaluating structured JSON outrank probabilistic intent.
 
 <br/>
 
@@ -84,8 +116,9 @@ Open Policy Agent (OPA), Cedar, RBAC, mTLS, JWT, Vault
 <summary><b>View Additional Projects</b></summary>
 <br/>
 
-- **PakLand** Flutter real estate platform featuring an **n8n moderation pipeline** using Google Vision API and GPT-4o-Mini to automatically expire stale listings and assign Trust Scores to sellers.
-- **[GradePilot](https://github.com/AhmaadKaleeem/cgpa_helper_au)** A Manifest V3 Chrome extension built in vanilla JavaScript that parses university DOM structures to simulate CGPA retake rules locally, distributed via WinGet.
+- **[PakLand](https://www.ahmadkaleem.tech/case/pakland)**: A Flutter real estate platform featuring a GPT-4o-Mini moderation pipeline that automatically expires stale listings and assigns Trust Scores to sellers, directly affecting their search ranking.
+- **[GradePilot](https://www.ahmadkaleem.tech/case/gradepilot)**: A Manifest V3 Chrome extension built in vanilla JavaScript that parses university DOM structures to simulate CGPA retake rules locally, distributed via WinGet.
+
 </details>
 
 <div align="center">
