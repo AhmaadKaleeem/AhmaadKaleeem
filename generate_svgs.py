@@ -256,14 +256,14 @@ import math
 def generate_radar_svg():
     """Generates an animated SVG Radar Chart for Skills"""
     skills = [
-        ("Python & FastAPI", 95),
-        ("AI Agents & Tooling", 90),
-        ("Go & Backend", 85),
+        ("Python &amp; FastAPI", 95),
+        ("AI Agents &amp; Tooling", 90),
+        ("Go &amp; Backend", 85),
         ("Security (OPA, mTLS)", 88),
-        ("PostgreSQL & Redis", 85),
-        ("React & TypeScript", 80),
+        ("PostgreSQL &amp; Redis", 85),
+        ("React &amp; TypeScript", 80),
         ("Flutter", 75),
-        ("DevOps & Docker", 70)
+        ("DevOps &amp; Docker", 70)
     ]
     
     cx, cy = 400, 200
