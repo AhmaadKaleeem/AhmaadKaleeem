@@ -10,22 +10,16 @@
 
 <br/>
 
-<div align="center">
+<p align="center">
   <img src="./stats.svg?v=10" alt="GitHub Stats" height="195" />
   <img src="./streak.svg" alt="GitHub Streak" height="195" />
-</div>
+</p>
 
-<br/>
-
-<div align="center">
-  <img src="./radar.svg?v=1" alt="Skill Radar" height="300" />
-</div>
-
-<br/>
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contributions Graph" />
-</div>
+<p align="center">
+  <img src="./radar.svg?v=1" alt="Skill Radar" height="280" />
+  <!-- Once the GitHub Action runs successfully, uncomment the 3D graph below! -->
+  <!-- <img src="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contributions Graph" height="280" /> -->
+</p>
 
 <br/>
 
