@@ -529,6 +529,7 @@ def main():
         "header-building.svg": "What I'm Building",
         "header-stack.svg": "Tech Stack",
         "header-projects.svg": "Projects",
+        "header-experience.svg": "Experience",
         "header-background.svg": "Background",
         "header-certifications.svg": "Certifications",
         "header-contact.svg": "Contact"

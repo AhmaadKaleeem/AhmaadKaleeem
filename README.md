@@ -79,7 +79,7 @@ Sales teams lose deals due to slow response times, and manual follow-up doesn't 
 
 </details>
 
-<img src="./header-projects.svg?v=8" alt="Experience" />
+<img src="./header-experience.svg?v=1" alt="Experience" />
 
 ### Demetronics (Private) Limited | Full Stack Engineer Intern
 *Aug 2026 – Sep 2026 | Islamabad, Pakistan*
