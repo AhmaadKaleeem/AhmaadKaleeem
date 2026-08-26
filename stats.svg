@@ -43,14 +43,14 @@
     <g class="stat-box box1" transform="translate(0,0)">
         <rect x="40" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
         <text x="60" y="115" class="label">Total Commits</text>
-        <text x="60" y="165" class="value">618</text>
+        <text x="60" y="165" class="value">624</text>
     </g>
     
     <!-- Stat: PRs -->
     <g class="stat-box box2" transform="translate(0,0)">
         <rect x="290" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
         <text x="310" y="115" class="label">Pull Requests</text>
-        <text x="310" y="165" class="value">15</text>
+        <text x="310" y="165" class="value">19</text>
     </g>
     
     <!-- Stat: Issues -->
