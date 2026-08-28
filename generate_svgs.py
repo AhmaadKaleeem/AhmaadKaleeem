@@ -371,7 +371,7 @@ def generate_stats_svg(stats):
         return
 
     # Draw stats with Actsurance premium theme
-    svg = f"""<svg width="800" height="250" viewBox="0 0 800 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+    svg = f"""<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
         @import url('{FONT_URL}');
         .container {{ fill: {THEME_VOID}; }}
@@ -385,9 +385,9 @@ def generate_stats_svg(stats):
             stroke: {THEME_ALLOW};
             stroke-width: 1;
         }}
-        .header {{ font-family: '{FONT_FAMILY}'; font-size: 24px; font-weight: 700; fill: {THEME_ESCALATE}; }}
-        .label {{ font-family: '{FONT_FAMILY}'; font-size: 16px; fill: {THEME_SIGNAL}; opacity: 0.8; }}
-        .value {{ font-family: '{FONT_FAMILY}'; font-size: 32px; font-weight: 700; fill: {THEME_ALLOW}; }}
+        .header {{ font-family: '{FONT_FAMILY}'; font-size: 18px; font-weight: 700; fill: {THEME_ESCALATE}; }}
+        .label {{ font-family: '{FONT_FAMILY}'; font-size: 13px; fill: {THEME_SIGNAL}; opacity: 0.8; }}
+        .value {{ font-family: '{FONT_FAMILY}'; font-size: 28px; font-weight: 700; fill: {THEME_ALLOW}; }}
         
         .stat-box {{ opacity: 0; animation: statReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }}
         .box1 {{ animation-delay: 0.5s; }}
@@ -395,7 +395,7 @@ def generate_stats_svg(stats):
         .box3 {{ animation-delay: 0.9s; }}
         
         @keyframes statReveal {{
-            0% {{ opacity: 0; transform: translateY(20px); }}
+            0% {{ opacity: 0; transform: translateY(15px); }}
             100% {{ opacity: 1; transform: translateY(0); }}
         }}
         @keyframes pulseGlow {{
@@ -405,32 +405,32 @@ def generate_stats_svg(stats):
     </style>
     
     <!-- Background -->
-    <rect x="5" y="5" width="790" height="240" rx="8" class="container border-solid" />
-    <rect x="5" y="5" width="790" height="240" rx="8" fill="none" class="border-glow" />
+    <rect x="2" y="2" width="491" height="191" rx="4" class="container border-solid" />
+    <rect x="2" y="2" width="491" height="191" rx="4" fill="none" class="border-glow" />
     
     <!-- Title -->
-    <text x="40" y="45" class="header">&gt; SYSTEM_STATS {stats.get('login', 'AhmaadKaleeem')}</text>
-    <line x1="40" y1="60" x2="760" y2="60" class="border-solid" style="opacity: 0.3;" />
+    <text x="25" y="35" class="header">&gt; SYSTEM_STATS {stats.get('login', 'AhmaadKaleeem')}</text>
+    <line x1="25" y1="48" x2="470" y2="48" class="border-solid" style="opacity: 0.3;" />
     
     <!-- Stat: Commits -->
     <g class="stat-box box1" transform="translate(0,0)">
-        <rect x="40" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
-        <text x="60" y="115" class="label">Total Commits</text>
-        <text x="60" y="165" class="value">{stats['total_commits']}</text>
+        <rect x="25" y="65" width="135" height="105" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
+        <text x="92.5" y="100" class="label" text-anchor="middle">Commits</text>
+        <text x="92.5" y="145" class="value" text-anchor="middle">{stats['total_commits']}</text>
     </g>
     
     <!-- Stat: PRs -->
     <g class="stat-box box2" transform="translate(0,0)">
-        <rect x="290" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
-        <text x="310" y="115" class="label">Pull Requests</text>
-        <text x="310" y="165" class="value">{stats['total_prs']}</text>
+        <rect x="180" y="65" width="135" height="105" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
+        <text x="247.5" y="100" class="label" text-anchor="middle">Pull Requests</text>
+        <text x="247.5" y="145" class="value" text-anchor="middle">{stats['total_prs']}</text>
     </g>
     
     <!-- Stat: Issues -->
     <g class="stat-box box3" transform="translate(0,0)">
-        <rect x="540" y="80" width="220" height="120" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
-        <text x="560" y="115" class="label">Issues</text>
-        <text x="560" y="165" class="value">{stats['total_issues']}</text>
+        <rect x="335" y="65" width="135" height="105" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
+        <text x="402.5" y="100" class="label" text-anchor="middle">Issues</text>
+        <text x="402.5" y="145" class="value" text-anchor="middle">{stats['total_issues']}</text>
     </g>
 </svg>"""
     
