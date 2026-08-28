@@ -2,12 +2,12 @@ import os
 import requests
 
 # Portfolio Theme
-THEME_VOID = "#000000"
-THEME_SIGNAL = "#FFFFFF"
-THEME_ALLOW = "#059D00"
-THEME_ESCALATE = "#DF6513"
-FONT_FAMILY = "Courier Prime, monospace"
-FONT_URL = "https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
+THEME_VOID = "#18181B"
+THEME_SIGNAL = "#FAFAFA"
+THEME_ALLOW = "#F472B6"
+THEME_ESCALATE = "#A78BFA"
+FONT_FAMILY = "Nunito, sans-serif"
+FONT_URL = "https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&amp;display=swap"
 
 # GitHub GraphQL Setup
 GH_TOKEN = os.getenv('GH_TOKEN')
@@ -217,16 +217,16 @@ def generate_terminal_svg():
     <!-- Window -->
     <rect x="5" y="5" width="790" height="190" rx="6" class="bg border" />
     <!-- Top Bar -->
-    <rect x="5" y="5" width="790" height="30" rx="6" fill="#111" class="border" />
-    <circle cx="20" cy="20" r="6" fill="#FF5F56" />
-    <circle cx="40" cy="20" r="6" fill="#FFBD2E" />
-    <circle cx="60" cy="20" r="6" fill="#27C93F" />
-    <text x="350" y="22" class="text" style="font-size: 14px; opacity: 0.5;">bash - ahmad - 80x24</text>
+    <rect x="5" y="5" width="790" height="30" rx="6" fill="#27272A" class="border" />
+    <circle cx="20" cy="20" r="6" fill="#F43F5E" />
+    <circle cx="40" cy="20" r="6" fill="#FBBF24" />
+    <circle cx="60" cy="20" r="6" fill="#34D399" />
+    <text x="360" y="22" class="text" style="font-size: 14px; opacity: 0.5;">🌸 ahmad ✨</text>
 
     <!-- Terminal Content -->
     <g transform="translate(20, 65)">
         <g class="line1">
-            <text y="0" class="text"><tspan class="prompt">ahmad@Actsurance ~$</tspan> whoami</text>
+            <text y="0" class="text"><tspan class="prompt">👋 Hello! I am</tspan></text>
         </g>
         
         <g class="line2">
@@ -234,7 +234,7 @@ def generate_terminal_svg():
         </g>
         
         <g class="line3">
-            <text y="60" class="text"><tspan class="prompt">ahmad@Actsurance ~$</tspan> cat current_mission.txt</text>
+            <text y="60" class="text"><tspan class="prompt">🎯 Current Mission</tspan></text>
         </g>
         
         <g class="line4">
@@ -242,8 +242,8 @@ def generate_terminal_svg():
         </g>
 
         <g class="line5">
-            <text y="120" class="text"><tspan class="prompt">ahmad@Actsurance ~$</tspan></text>
-            <rect x="195" y="105" width="10" height="18" class="cursor" />
+            <text y="120" class="text"><tspan class="prompt">✨</tspan></text>
+            <rect x="35" y="105" width="10" height="18" class="cursor" rx="3" />
         </g>
     </g>
 </svg>"""
@@ -321,7 +321,7 @@ def generate_radar_svg():
     </style>
     
     <rect width="800" height="400" class="radar-bg" />
-    <text x="30" y="40" class="title">&gt; SKILL_RADAR.exe</text>
+    <text x="30" y="40" class="title">🌟 My Skill Radar 🌟</text>
     
     <!-- Grid -->
     <g class="axis-group">
@@ -409,7 +409,7 @@ def generate_stats_svg(stats):
     <rect x="2" y="2" width="491" height="191" rx="4" fill="none" class="border-glow" />
     
     <!-- Title -->
-    <text x="25" y="35" class="header">&gt; SYSTEM_STATS {stats.get('login', 'AhmaadKaleeem')}</text>
+    <text x="25" y="35" class="header">✨ {stats.get('login', 'AhmaadKaleeem')}'s GitHub Stats ✨</text>
     <line x1="25" y1="48" x2="470" y2="48" class="border-solid" style="opacity: 0.3;" />
     
     <!-- Stat: Commits -->
