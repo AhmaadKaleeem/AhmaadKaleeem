@@ -1,56 +1,34 @@
 <svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
         .bg { fill: #18181B; }
-        .border { stroke: #A78BFA; stroke-width: 1; stroke-opacity: 0.5; }
-        .text { font-family: 'Nunito, sans-serif'; font-size: 18px; fill: #FAFAFA; }
-        .prompt { fill: #A78BFA; font-weight: 700; }
-        .highlight { fill: #F472B6; font-weight: 700; }
+        .border { stroke: #A78BFA; stroke-width: 2; stroke-opacity: 0.3; }
+        .text { font-family: 'Nunito, sans-serif'; font-size: 18px; fill: #FAFAFA; font-weight: 700; }
+        .prompt { fill: #A78BFA; font-weight: 800; }
+        .highlight { fill: #F472B6; font-weight: 800; }
         .cursor { fill: #F472B6; animation: blink 0.8s step-end infinite; }
-        
-        /* Typing animation effects */
-        .type-line { overflow: hidden; white-space: nowrap; }
-        
         .line1 { opacity: 0; animation: fadeIn 0.1s forwards 0.5s; }
         .line2 { opacity: 0; animation: fadeIn 0.1s forwards 1.2s; }
         .line3 { opacity: 0; animation: fadeIn 0.1s forwards 2.0s; }
         .line4 { opacity: 0; animation: fadeIn 0.1s forwards 2.8s; }
         .line5 { opacity: 0; animation: fadeIn 0.1s forwards 3.6s; }
-        
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
         @keyframes fadeIn { to { opacity: 1; } }
     </style>
-    
-    <!-- Window -->
-    <rect x="5" y="5" width="790" height="190" rx="6" class="bg border" />
-    <!-- Top Bar -->
-    <rect x="5" y="5" width="790" height="30" rx="6" fill="#27272A" class="border" />
-    <circle cx="20" cy="20" r="6" fill="#F43F5E" />
-    <circle cx="40" cy="20" r="6" fill="#FBBF24" />
-    <circle cx="60" cy="20" r="6" fill="#34D399" />
-    <text x="360" y="22" class="text" style="font-size: 14px; opacity: 0.5;">🌸 ahmad ✨</text>
-
-    <!-- Terminal Content -->
-    <g transform="translate(20, 65)">
-        <g class="line1">
-            <text y="0" class="text"><tspan class="prompt">👋 Hello! I am</tspan></text>
-        </g>
-        
-        <g class="line2">
-            <text y="30" class="text highlight">Ahmad Kaleem Bhatti | AI Engineer &amp; Backend Developer</text>
-        </g>
-        
-        <g class="line3">
-            <text y="60" class="text"><tspan class="prompt">🎯 Current Mission</tspan></text>
-        </g>
-        
-        <g class="line4">
-            <text y="90" class="text highlight">Building deterministic security infrastructure for AI agents.</text>
-        </g>
-
+    <rect x="5" y="5" width="790" height="190" rx="16" class="bg border" />
+    <rect x="5" y="5" width="790" height="35" rx="16" fill="#27272A" class="border" />
+    <circle cx="25" cy="22" r="7" fill="#F43F5E" />
+    <circle cx="45" cy="22" r="7" fill="#FBBF24" />
+    <circle cx="65" cy="22" r="7" fill="#34D399" />
+    <text x="360" y="24" class="text" style="font-size: 15px; opacity: 0.7;">🌸 ahmad ✨</text>
+    <g transform="translate(25, 75)">
+        <g class="line1"><text y="0" class="text"><tspan class="prompt">👋 Hello! I am</tspan></text></g>
+        <g class="line2"><text y="30" class="text highlight">Ahmad Kaleem Bhatti | AI Engineer &amp; Backend Developer</text></g>
+        <g class="line3"><text y="60" class="text"><tspan class="prompt">🎯 Current Mission</tspan></text></g>
+        <g class="line4"><text y="90" class="text highlight">Building deterministic security infrastructure for AI agents.</text></g>
         <g class="line5">
             <text y="120" class="text"><tspan class="prompt">✨</tspan></text>
-            <rect x="35" y="105" width="10" height="18" class="cursor" rx="3" />
+            <rect x="35" y="105" width="10" height="18" class="cursor" rx="4" />
         </g>
     </g>
 </svg>
