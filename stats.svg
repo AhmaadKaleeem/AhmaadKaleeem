@@ -1,35 +1,62 @@
 <svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
-        .container { fill: #18181B; }
-        .border-glow { stroke: #F472B6; stroke-width: 2; filter: blur(6px); animation: pulseGlow 2s infinite alternate; }
-        .border-solid { stroke: #F472B6; stroke-width: 2; }
-        .header { font-family: 'Nunito, sans-serif'; font-size: 20px; font-weight: 800; fill: #A78BFA; }
-        .label { font-family: 'Nunito, sans-serif'; font-size: 14px; fill: #FAFAFA; opacity: 0.9; font-weight: 700; }
-        .value { font-family: 'Nunito, sans-serif'; font-size: 32px; font-weight: 800; fill: #F472B6; }
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+        .container { fill: #000000; }
+        .border-glow {
+            stroke: #059D00;
+            stroke-width: 2;
+            filter: blur(4px);
+            animation: pulseGlow 2s infinite alternate;
+        }
+        .border-solid {
+            stroke: #059D00;
+            stroke-width: 1;
+        }
+        .header { font-family: 'Courier Prime, monospace'; font-size: 18px; font-weight: 700; fill: #DF6513; }
+        .label { font-family: 'Courier Prime, monospace'; font-size: 13px; fill: #FFFFFF; opacity: 0.8; }
+        .value { font-family: 'Courier Prime, monospace'; font-size: 28px; font-weight: 700; fill: #059D00; }
+        
         .stat-box { opacity: 0; animation: statReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
-        .box1 { animation-delay: 0.5s; } .box2 { animation-delay: 0.7s; } .box3 { animation-delay: 0.9s; }
-        @keyframes statReveal { 0% { opacity: 0; transform: translateY(15px); } 100% { opacity: 1; transform: translateY(0); } }
-        @keyframes pulseGlow { 0% { opacity: 0.3; } 100% { opacity: 0.8; } }
+        .box1 { animation-delay: 0.5s; }
+        .box2 { animation-delay: 0.7s; }
+        .box3 { animation-delay: 0.9s; }
+        
+        @keyframes statReveal {
+            0% { opacity: 0; transform: translateY(15px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulseGlow {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.8; }
+        }
     </style>
-    <rect x="2" y="2" width="491" height="191" rx="16" class="container border-solid" />
-    <rect x="2" y="2" width="491" height="191" rx="16" fill="none" class="border-glow" />
-    <text x="25" y="40" class="header">✨ AhmaadKaleeem's Stats ✨</text>
-    <line x1="25" y1="55" x2="470" y2="55" class="border-solid" style="opacity: 0.2; stroke-width: 1;" />
     
+    <!-- Background -->
+    <rect x="2" y="2" width="491" height="191" rx="4" class="container border-solid" />
+    <rect x="2" y="2" width="491" height="191" rx="4" fill="none" class="border-glow" />
+    
+    <!-- Title -->
+    <text x="25" y="35" class="header">&gt; SYSTEM_STATS AhmaadKaleeem</text>
+    <line x1="25" y1="48" x2="470" y2="48" class="border-solid" style="opacity: 0.3;" />
+    
+    <!-- Stat: Commits -->
     <g class="stat-box box1" transform="translate(0,0)">
-        <rect x="25" y="70" width="135" height="100" rx="12" fill="#27272A" />
-        <text x="92.5" y="105" class="label" text-anchor="middle">Commits</text>
-        <text x="92.5" y="150" class="value" text-anchor="middle">342</text>
+        <rect x="25" y="65" width="135" height="105" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
+        <text x="92.5" y="100" class="label" text-anchor="middle">Commits</text>
+        <text x="92.5" y="145" class="value" text-anchor="middle">342</text>
     </g>
+    
+    <!-- Stat: PRs -->
     <g class="stat-box box2" transform="translate(0,0)">
-        <rect x="180" y="70" width="135" height="100" rx="12" fill="#27272A" />
-        <text x="247.5" y="105" class="label" text-anchor="middle">PRs</text>
-        <text x="247.5" y="150" class="value" text-anchor="middle">12</text>
+        <rect x="180" y="65" width="135" height="105" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
+        <text x="247.5" y="100" class="label" text-anchor="middle">Pull Requests</text>
+        <text x="247.5" y="145" class="value" text-anchor="middle">12</text>
     </g>
+    
+    <!-- Stat: Issues -->
     <g class="stat-box box3" transform="translate(0,0)">
-        <rect x="335" y="70" width="135" height="100" rx="12" fill="#27272A" />
-        <text x="402.5" y="105" class="label" text-anchor="middle">Issues</text>
-        <text x="402.5" y="150" class="value" text-anchor="middle">5</text>
+        <rect x="335" y="65" width="135" height="105" rx="4" fill="#0A080C" class="border-solid" style="stroke-opacity: 0.5" />
+        <text x="402.5" y="100" class="label" text-anchor="middle">Issues</text>
+        <text x="402.5" y="145" class="value" text-anchor="middle">5</text>
     </g>
 </svg>

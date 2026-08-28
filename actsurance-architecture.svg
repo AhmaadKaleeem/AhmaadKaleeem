@@ -1,18 +1,28 @@
 <svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
-        text { font-family: 'Nunito, sans-serif'; fill: #FAFAFA; font-size: 14px; font-weight: 700; }
-        .title { font-size: 24px; font-weight: 800; fill: #A78BFA; }
-        .box { fill: #27272A; stroke: #F472B6; stroke-width: 2; rx: 12; }
-        .box-escalate { fill: #27272A; stroke: #A78BFA; stroke-width: 2; rx: 12; }
-        .flow-line { stroke: #F472B6; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 8 8; animation: flow 20s linear infinite; opacity: 0.8; }
-        .flow-line-escalate { stroke: #A78BFA; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 8 8; animation: flow 20s linear infinite; opacity: 0.8; }
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+        text { font-family: 'Courier Prime, monospace'; fill: #FFFFFF; font-size: 14px; }
+        .title { font-size: 20px; font-weight: bold; fill: #DF6513; }
+        .box { fill: #0A080C; stroke: #059D00; stroke-width: 1.5; rx: 6; }
+        .box-escalate { fill: #0A080C; stroke: #DF6513; stroke-width: 1.5; rx: 6; }
+        
+        /* Flow animations */
+        .flow-line { stroke: #059D00; stroke-width: 2; stroke-dasharray: 6 6; animation: flow 20s linear infinite; opacity: 0.6; }
+        .flow-line-escalate { stroke: #DF6513; stroke-width: 2; stroke-dasharray: 6 6; animation: flow 20s linear infinite; opacity: 0.6; }
+        
         @keyframes flow { to { stroke-dashoffset: -400; } }
+        
         .pulse { animation: pulseNode 3s infinite alternate; }
-        @keyframes pulseNode { 0% { filter: drop-shadow(0 0 4px #F472B6); } 100% { filter: drop-shadow(0 0 12px #F472B6); } }
+        @keyframes pulseNode {
+            0% { filter: drop-shadow(0 0 2px #059D00); }
+            100% { filter: drop-shadow(0 0 8px #059D00); }
+        }
     </style>
-    <rect width="800" height="400" fill="#18181B" rx="16" />
-    <text x="35" y="45" class="title">🌸 Actsurance Architecture</text>
+    
+    <rect width="800" height="400" fill="#000000" />
+    <text x="30" y="40" class="title">Actsurance Architecture</text>
+    
+    <!-- Flow Lines -->
     <path d="M 120 120 L 220 120" class="flow-line" />
     <path d="M 340 120 L 440 120" class="flow-line" />
     <path d="M 560 120 L 660 120" class="flow-line" />
@@ -20,32 +30,39 @@
     <path d="M 620 280 L 620 320" class="flow-line-escalate" />
     <path d="M 680 240 L 720 240 L 720 140 L 680 140" class="flow-line" style="animation-direction: reverse;" />
     
+    <!-- Nodes -->
+    <!-- Client -->
     <rect x="20" y="90" width="100" height="60" class="box" />
     <text x="35" y="115">AI Agent</text>
-    <text x="35" y="135" style="font-size: 11px; opacity: 0.7;">Tool Call</text>
+    <text x="35" y="135" style="font-size: 10px; opacity: 0.7;">Tool Call</text>
     
+    <!-- TIER 1 -->
     <rect x="220" y="80" width="120" height="150" class="box pulse" />
-    <text x="240" y="105" style="fill: #A78BFA;">L1 Firewall</text>
+    <text x="240" y="105" style="font-weight: bold; fill: #DF6513;">L1 Firewall</text>
     <text x="235" y="130" style="font-size: 12px;">RE2 Regex</text>
     <text x="235" y="150" style="font-size: 12px;">Identity JWT</text>
     <text x="235" y="170" style="font-size: 12px;">Rate Limiter</text>
-    <text x="235" y="210" style="font-size: 11px; fill: #F472B6;">403 DENY</text>
+    <text x="235" y="210" style="font-size: 10px; fill: #DF6513;">[403 HARD DENY]</text>
     
+    <!-- Splitter -->
     <rect x="440" y="90" width="120" height="80" class="box" />
-    <text x="455" y="115" style="fill: #A78BFA;">Splitter</text>
+    <text x="455" y="115" style="font-weight: bold; fill: #DF6513;">Splitter</text>
     <text x="455" y="135" style="font-size: 12px;">OPA (RBAC)</text>
     <text x="455" y="155" style="font-size: 12px;">ONNX (Risk)</text>
     
+    <!-- Fast Path -->
     <rect x="660" y="90" width="120" height="60" class="box" />
-    <text x="675" y="115">Fast Path</text>
+    <text x="675" y="115" style="font-weight: bold;">Fast Path</text>
     <text x="675" y="135" style="font-size: 12px;">Sealed Broker</text>
     
+    <!-- Slow Path -->
     <rect x="560" y="210" width="120" height="70" class="box-escalate" />
-    <text x="575" y="235" style="fill: #A78BFA;">Slow Path</text>
-    <text x="575" y="255" style="font-size: 12px;">Temporal</text>
+    <text x="575" y="235" style="font-weight: bold; fill: #DF6513;">Slow Path</text>
+    <text x="575" y="255" style="font-size: 12px;">Temporal Workflow</text>
     <text x="575" y="270" style="font-size: 12px;">Human Review</text>
     
+    <!-- Verification -->
     <rect x="560" y="320" width="120" height="60" class="box" style="stroke: #555;" />
-    <text x="570" y="345">Postgres</text>
+    <text x="570" y="345">Postgres Audit</text>
     <text x="570" y="365" style="font-size: 12px;">Offline Verifier</text>
 </svg>

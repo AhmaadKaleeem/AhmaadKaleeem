@@ -1,20 +1,48 @@
-<svg width="800" height="60" viewBox="0 0 800 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="60" viewBox="0 0 800 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
-        .name { font-family: 'Nunito, sans-serif'; font-weight: 800; font-size: 24px; fill: #FAFAFA; opacity: 0; animation: textReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.2s; }
-        .badge-text { font-family: 'Nunito, sans-serif'; font-size: 11px; font-weight: 700; fill: #FAFAFA; }
-        .line { stroke: #A78BFA; stroke-width: 3; stroke-linecap: round; }
-        @keyframes textReveal { 0% { opacity: 0; transform: translateX(-20px); filter: blur(4px); } 100% { opacity: 1; transform: translateX(0); filter: blur(0px); } }
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+        .name {
+            font-family: 'Courier Prime, monospace';
+            font-weight: 700;
+            font-size: 24px;
+            fill: #000000;
+            opacity: 0;
+            animation: textReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.2s;
+        }
+        .badge-text {
+            font-family: 'Verdana, Geneva, sans-serif';
+            font-size: 11px;
+            font-weight: normal;
+            fill: #FFFFFF;
+        }
+        @media (prefers-color-scheme: dark) {
+            .name { fill: #FFFFFF; }
+        }
+        .line {
+            stroke: #DF6513;
+            stroke-width: 2;
+        }
+        
+        @keyframes textReveal {
+            0% { opacity: 0; transform: translateX(-20px); filter: blur(4px); }
+            100% { opacity: 1; transform: translateX(0); filter: blur(0px); }
+        }
     </style>
+    
     <rect width="800" height="60" fill="transparent" />
+    
+    <!-- Left Side: Dash, Name, Pipe -->
     <a href="https://www.ahmadkaleem.tech" target="_blank">
         <line x1="10" y1="30" x2="80" y2="30" class="line" />
         <text x="100" y="38" class="name">Ahmad Kaleem Bhatti</text>
     </a>
-    <text x="420" y="36" font-family="Nunito, sans-serif" font-size="28px" fill="#555">|</text>
+    <text x="420" y="36" font-family="Courier Prime, monospace" font-size="28px" fill="#555">|</text>
+    
+    <!-- Right Side: Badges -->
     <g transform="translate(705, 18)">
+        <!-- Portfolio Badge -->
         <a href="https://www.ahmadkaleem.tech" target="_blank">
-            <rect x="0" y="0" width="75" height="24" fill="#F472B6" rx="12" />
+            <rect x="0" y="0" width="75" height="24" fill="#000000" rx="0" />
             <text x="37.5" y="16" class="badge-text" text-anchor="middle">Portfolio</text>
         </a>
     </g>

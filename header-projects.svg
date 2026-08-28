@@ -1,24 +1,69 @@
 <svg width="800" height="120" viewBox="0 0 800 120" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
         .title {
-            font-family: 'Nunito, sans-serif'; font-weight: 800; font-size: 42px; fill: #FAFAFA;
-            opacity: 0; animation: textReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.3s;
+            font-family: 'Courier Prime, monospace';
+            font-weight: 700;
+            font-size: 42px;
+            fill: #000000;
+            opacity: 0;
+            animation: textReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.3s;
         }
-        .glow { fill: #A78BFA; filter: blur(8px); opacity: 0.4; animation: pulseGlow 3s infinite alternate; }
-        .dot { fill: #A78BFA; animation: pulse 2s infinite; }
-        .line { stroke: #F472B6; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 800; stroke-dashoffset: 800; animation: drawLine 1.2s cubic-bezier(0.8, 0, 0.2, 1) forwards; }
-        .accent-box { fill: #A78BFA; opacity: 0; animation: boxReveal 0.5s ease-out forwards 0.8s; rx: 4; }
-        @keyframes textReveal { 0% { opacity: 0; transform: translateX(-20px); filter: blur(4px); } 100% { opacity: 1; transform: translateX(0); filter: blur(0px); } }
-        @keyframes drawLine { to { stroke-dashoffset: 0; } }
-        @keyframes pulseGlow { 0% { opacity: 0.2; transform: scale(0.98); } 100% { opacity: 0.6; transform: scale(1.02); } }
-        @keyframes boxReveal { to { opacity: 1; transform: scaleX(1); } }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        @media (prefers-color-scheme: dark) {
+            .title { fill: #FFFFFF; }
+        }
+        .glow {
+            fill: #DF6513;
+            filter: blur(8px);
+            opacity: 0.4;
+            animation: pulseGlow 3s infinite alternate;
+        }
+        .dot {
+            fill: #DF6513;
+            animation: pulse 2s infinite;
+        }
+        .line {
+            stroke: #059D00;
+            stroke-width: 2;
+            stroke-dasharray: 800;
+            stroke-dashoffset: 800;
+            animation: drawLine 1.2s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+        }
+        .accent-box {
+            fill: #DF6513;
+            opacity: 0;
+            animation: boxReveal 0.5s ease-out forwards 0.8s;
+        }
+        
+        @keyframes textReveal {
+            0% { opacity: 0; transform: translateX(-20px); letter-spacing: -5px; filter: blur(4px); }
+            100% { opacity: 1; transform: translateX(0); letter-spacing: 0px; filter: blur(0px); }
+        }
+        @keyframes drawLine {
+            to { stroke-dashoffset: 0; }
+        }
+        @keyframes pulseGlow {
+            0% { opacity: 0.2; transform: scale(0.98); }
+            100% { opacity: 0.6; transform: scale(1.02); }
+        }
+        @keyframes boxReveal {
+            to { opacity: 1; transform: scaleX(1); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
     </style>
     <rect width="800" height="120" fill="transparent" />
+    
+    <!-- Background Glow -->
     <rect x="20" y="60" width="100" height="40" class="glow" />
+    
+    <!-- Title -->
     <text x="50" y="75" class="title">Projects</text>
     <rect x="20" y="45" width="8" height="35" class="accent-box" transform-origin="20 45" transform="scaleX(0)" />
+    
+    <!-- Decorative Line -->
     <line x1="20" y1="95" x2="780" y2="95" class="line" />
-    <circle cx="780" cy="95" r="5" class="dot" />
+    <circle cx="780" cy="95" r="4" class="dot" />
 </svg>
