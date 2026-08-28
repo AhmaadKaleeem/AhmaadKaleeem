@@ -1,8 +1,8 @@
 <svg width="800" height="120" viewBox="0 0 800 120" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&amp;display=swap');
         .title {
-            font-family: 'Courier Prime, monospace';
+            font-family: 'Nunito, sans-serif';
             font-weight: 700;
             font-size: 42px;
             fill: #000000;
@@ -13,24 +13,24 @@
             .title { fill: #FFFFFF; }
         }
         .glow {
-            fill: #DF6513;
+            fill: #A78BFA;
             filter: blur(8px);
             opacity: 0.4;
             animation: pulseGlow 3s infinite alternate;
         }
         .dot {
-            fill: #DF6513;
+            fill: #A78BFA;
             animation: pulse 2s infinite;
         }
         .line {
-            stroke: #059D00;
+            stroke: #F472B6;
             stroke-width: 2;
             stroke-dasharray: 800;
             stroke-dashoffset: 800;
             animation: drawLine 1.2s cubic-bezier(0.8, 0, 0.2, 1) forwards;
         }
         .accent-box {
-            fill: #DF6513;
+            fill: #A78BFA;
             opacity: 0;
             animation: boxReveal 0.5s ease-out forwards 0.8s;
         }

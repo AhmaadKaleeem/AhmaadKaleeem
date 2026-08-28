@@ -1,8 +1,8 @@
 <svg width="800" height="60" viewBox="0 0 800 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&amp;display=swap');
         .name {
-            font-family: 'Courier Prime, monospace';
+            font-family: 'Nunito, sans-serif';
             font-weight: 700;
             font-size: 24px;
             fill: #000000;
@@ -19,7 +19,7 @@
             .name { fill: #FFFFFF; }
         }
         .line {
-            stroke: #DF6513;
+            stroke: #A78BFA;
             stroke-width: 2;
         }
         
@@ -36,7 +36,7 @@
         <line x1="10" y1="30" x2="80" y2="30" class="line" />
         <text x="100" y="38" class="name">Ahmad Kaleem Bhatti</text>
     </a>
-    <text x="420" y="36" font-family="Courier Prime, monospace" font-size="28px" fill="#555">|</text>
+    <text x="420" y="36" font-family="Nunito, sans-serif" font-size="28px" fill="#555">|</text>
     
     <!-- Right Side: Badges -->
     <g transform="translate(705, 18)">

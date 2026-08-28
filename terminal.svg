@@ -1,12 +1,12 @@
 <svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap');
-        .bg { fill: #000000; }
-        .border { stroke: #DF6513; stroke-width: 1; stroke-opacity: 0.5; }
-        .text { font-family: 'Courier Prime, monospace'; font-size: 18px; fill: #FFFFFF; }
-        .prompt { fill: #DF6513; font-weight: 700; }
-        .highlight { fill: #059D00; font-weight: 700; }
-        .cursor { fill: #059D00; animation: blink 0.8s step-end infinite; }
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&amp;display=swap');
+        .bg { fill: #18181B; }
+        .border { stroke: #A78BFA; stroke-width: 1; stroke-opacity: 0.5; }
+        .text { font-family: 'Nunito, sans-serif'; font-size: 18px; fill: #FAFAFA; }
+        .prompt { fill: #A78BFA; font-weight: 700; }
+        .highlight { fill: #F472B6; font-weight: 700; }
+        .cursor { fill: #F472B6; animation: blink 0.8s step-end infinite; }
         
         /* Typing animation effects */
         .type-line { overflow: hidden; white-space: nowrap; }
@@ -24,16 +24,16 @@
     <!-- Window -->
     <rect x="5" y="5" width="790" height="190" rx="6" class="bg border" />
     <!-- Top Bar -->
-    <rect x="5" y="5" width="790" height="30" rx="6" fill="#111" class="border" />
-    <circle cx="20" cy="20" r="6" fill="#FF5F56" />
-    <circle cx="40" cy="20" r="6" fill="#FFBD2E" />
-    <circle cx="60" cy="20" r="6" fill="#27C93F" />
-    <text x="350" y="22" class="text" style="font-size: 14px; opacity: 0.5;">bash - ahmad - 80x24</text>
+    <rect x="5" y="5" width="790" height="30" rx="6" fill="#27272A" class="border" />
+    <circle cx="20" cy="20" r="6" fill="#F43F5E" />
+    <circle cx="40" cy="20" r="6" fill="#FBBF24" />
+    <circle cx="60" cy="20" r="6" fill="#34D399" />
+    <text x="360" y="22" class="text" style="font-size: 14px; opacity: 0.5;">🌸 ahmad ✨</text>
 
     <!-- Terminal Content -->
     <g transform="translate(20, 65)">
         <g class="line1">
-            <text y="0" class="text"><tspan class="prompt">ahmad@Actsurance ~$</tspan> whoami</text>
+            <text y="0" class="text"><tspan class="prompt">👋 Hello! I am</tspan></text>
         </g>
         
         <g class="line2">
@@ -41,7 +41,7 @@
         </g>
         
         <g class="line3">
-            <text y="60" class="text"><tspan class="prompt">ahmad@Actsurance ~$</tspan> cat current_mission.txt</text>
+            <text y="60" class="text"><tspan class="prompt">🎯 Current Mission</tspan></text>
         </g>
         
         <g class="line4">
@@ -49,8 +49,8 @@
         </g>
 
         <g class="line5">
-            <text y="120" class="text"><tspan class="prompt">ahmad@Actsurance ~$</tspan></text>
-            <rect x="195" y="105" width="10" height="18" class="cursor" />
+            <text y="120" class="text"><tspan class="prompt">✨</tspan></text>
+            <rect x="35" y="105" width="10" height="18" class="cursor" rx="3" />
         </g>
     </g>
 </svg>
