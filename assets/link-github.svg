@@ -1,0 +1,13 @@
+<svg width="75" height="26" viewBox="0 0 75 26" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .btn { fill: #0A0A0A; stroke: #1E1E1E; stroke-width: 1; transition: all 0.2s ease; }
+    .dot { fill: #A3A3A3; transition: all 0.2s ease; }
+    .txt { font-family: monospace; font-size: 10px; fill: #A3A3A3; letter-spacing: 1px; transition: fill 0.2s ease; cursor: pointer; }
+    svg:hover .btn { stroke: #A3A3A3; fill: #151515; }
+    svg:hover .dot { fill: #FF6B00; }
+    svg:hover .txt { fill: #FFFFFF; }
+  </style>
+  <rect class="btn" width="73" height="24" x="1" y="1" rx="12"/>
+  <circle class="dot" cx="14" cy="13" r="3"/>
+  <text class="txt" x="24" y="16.5">GITHUB</text>
+</svg>

@@ -96,6 +96,32 @@ def status_badge(name, label, color):
 </svg>'''
     w(name, svg)
 
+# ── 4. SOCIAL CHIPS: pill-shaped link buttons ────────────────────────────────
+
+def social_chips():
+    items = [
+        ("link-email.svg", "EMAIL"),
+        ("link-linkedin.svg", "LINKEDIN"),
+        ("link-portfolio.svg", "PORTFOLIO"),
+        ("link-github.svg", "GITHUB"),
+    ]
+    for fname, label in items:
+        W = int(len(label) * 7.5 + 30)
+        svg = f'''<svg width="{W}" height="26" viewBox="0 0 {W} 26" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .btn {{ fill: {VOID}; stroke: {MUTED}; stroke-width: 1; transition: all 0.2s ease; }}
+    .dot {{ fill: {DIMMED}; transition: all 0.2s ease; }}
+    .txt {{ font-family: monospace; font-size: 10px; fill: {DIMMED}; letter-spacing: 1px; transition: fill 0.2s ease; cursor: pointer; }}
+    svg:hover .btn {{ stroke: {DIMMED}; fill: #151515; }}
+    svg:hover .dot {{ fill: {ACTION}; }}
+    svg:hover .txt {{ fill: {SIGNAL}; }}
+  </style>
+  <rect class="btn" width="{W-2}" height="24" x="1" y="1" rx="12"/>
+  <circle class="dot" cx="14" cy="13" r="3"/>
+  <text class="txt" x="24" y="16.5">{label}</text>
+</svg>'''
+        w(fname, svg)
+
 # ── MAIN ─────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     print("Generating SVGs...")
@@ -104,4 +130,5 @@ if __name__ == "__main__":
     divider()
     status_badge("badge-shipped.svg",  "● SHIPPED",  VERIFIED)
     status_badge("badge-building.svg", "● BUILDING", ACTION)
+    social_chips()
     print("Done.")

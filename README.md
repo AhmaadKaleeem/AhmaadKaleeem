@@ -7,13 +7,13 @@
 </p>
 
 <p align="center">
-  <a href="mailto:ahmadkaleeem1@gmail.com">Email</a>
-  &ensp;·&ensp;
-  <a href="https://linkedin.com/in/ahmadkaleembhatti">LinkedIn</a>
-  &ensp;·&ensp;
-  <a href="https://www.ahmadkaleem.tech">Portfolio</a>
-  &ensp;·&ensp;
-  <a href="https://github.com/AhmaadKaleeem">GitHub</a>
+  <a href="mailto:ahmadkaleeem1@gmail.com"><img src="assets/link-email.svg" alt="Email"></a>
+  &nbsp;
+  <a href="https://linkedin.com/in/ahmadkaleembhatti"><img src="assets/link-linkedin.svg" alt="LinkedIn"></a>
+  &nbsp;
+  <a href="https://www.ahmadkaleem.tech"><img src="assets/link-portfolio.svg" alt="Portfolio"></a>
+  &nbsp;
+  <a href="https://github.com/AhmaadKaleeem"><img src="assets/link-github.svg" alt="GitHub"></a>
 </p>
 
 <br>
@@ -246,10 +246,10 @@ The system forces agents to request actions rather than holding credentials dire
 
 <img src="assets/divider.svg" width="100%" alt="">
 
-<sub>
-  <a href="mailto:ahmadkaleeem1@gmail.com">Email</a>
-  &ensp;·&ensp;
-  <a href="https://linkedin.com/in/ahmadkaleembhatti">LinkedIn</a>
-  &ensp;·&ensp;
-  <a href="https://www.ahmadkaleem.tech">ahmadkaleem.tech</a>
-</sub>
+<p align="center">
+  <a href="mailto:ahmadkaleeem1@gmail.com"><img src="assets/link-email.svg" alt="Email"></a>
+  &nbsp;
+  <a href="https://linkedin.com/in/ahmadkaleembhatti"><img src="assets/link-linkedin.svg" alt="LinkedIn"></a>
+  &nbsp;
+  <a href="https://www.ahmadkaleem.tech"><img src="assets/link-portfolio.svg" alt="Portfolio"></a>
+</p>
