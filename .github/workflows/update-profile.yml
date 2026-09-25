@@ -42,7 +42,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add *.svg
+          git add name.svg terminal.svg stats.svg streak.svg radar.svg actsurance-architecture.svg header-*.svg signal-divider.svg profile-dashboard.svg proof-board.svg agent-boundary.svg
           git diff-index --quiet HEAD || git commit -m "Auto-update profile graphics"
           git pull --rebase
           git push

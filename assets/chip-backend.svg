@@ -1,0 +1,7 @@
+<svg width="73" height="20" viewBox="0 0 73 20"
+     xmlns="http://www.w3.org/2000/svg">
+  <rect width="73" height="20" fill="#0A0A0A" rx="2"/>
+  <rect width="2" height="20" fill="#22C55E"/>
+  <text x="8" y="14" font-family="monospace" font-size="9"
+        fill="#A3A3A3" letter-spacing="1">BACKEND</text>
+</svg>

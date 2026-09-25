@@ -1,136 +1,288 @@
-<div align="center">
-  <a href="https://www.ahmadkaleem.tech">
-    <img src="./name.svg?v=15" alt="Ahmad Kaleem Bhatti" />
-  </a>
-</div>
-
-<div align="center">
-  <img src="./terminal.svg?v=13" alt="Identity" width="100%" />
-</div>
-
-<br/>
-
 <p align="center">
-  <img src="./stats.svg?v=11" alt="GitHub Stats" width="49%" />
-  <img src="./streak.svg?v=1" alt="GitHub Streak" width="49%" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
+    <img alt="Ahmad Kaleem Bhatti" src="assets/banner-dark.svg" width="100%">
+  </picture>
 </p>
 
-<div align="center">
-  <img src="./radar.svg?v=1" alt="Skill Radar" width="100%" />
-  <!-- Once the GitHub Action runs successfully, uncomment the 3D graph below! -->
-  <!-- <img src="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contributions Graph" width="100%" /> -->
-</div>
+<p align="center">
+  <a href="mailto:ahmadkaleeem1@gmail.com">ahmadkaleeem1@gmail.com</a>
+  &ensp;·&ensp;
+  <a href="https://linkedin.com/in/ahmadkaleembhatti">LinkedIn</a>
+  &ensp;·&ensp;
+  <a href="https://www.ahmadkaleem.tech">Portfolio</a>
+  &ensp;·&ensp;
+  <a href="https://github.com/AhmaadKaleeem">GitHub</a>
+</p>
 
-<br/>
+<br>
 
-<img src="./header-building.svg?v=8" alt="Evidence" />
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/output/snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/output/snake-light.svg">
+  <img alt="Contribution snake" src="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/output/snake-dark.svg" width="100%">
+</picture>
 
-### [Actsurance](https://www.ahmadkaleem.tech/case/actsurance) | Zero-Trust Policy Gateway for AI Agents
+<br>
+<img src="assets/divider.svg" width="100%" alt="">
+<br>
 
-**The Problem**
-AI agents frequently interact with production systems without deterministic access control. A prompt injection attack that tricks an agent can result in destructive tool calls with no structural barrier to prevent data mutation. 
+### What I build
 
-**The Solution**
-Actsurance is a fail-closed security gateway that sits between AI agents and external APIs. It acts as a strict policy enforcer, evaluating structural rules and utilizing ONNX-based risk models to determine if a tool call should be allowed, denied, or escalated to a human reviewer.
+<table width="100%"><tr>
+<td width="50%" valign="top">
 
-<br/>
+**Backend systems**<br>
+APIs, layered architecture, background daemons, idempotency, rate limiting, RBAC.
 
-<div align="center">
-  <img src="./actsurance-architecture.svg?v=8" alt="Actsurance Architecture" />
-</div>
+`Go` `Python` `FastAPI` `PostgreSQL` `Redis` `Celery`
 
-<br/>
+</td>
+<td width="50%" valign="top">
+
+**AI applications**<br>
+Retrieval-augmented pipelines, tool calling, multi-provider LLM orchestration, agent authorization.
+
+`LangChain` `RAG` `OpenRouter` `OPA` `ONNX`
+
+</td>
+</tr><tr>
+<td width="50%" valign="top">
+
+**Security engineering**<br>
+RBAC built three ways, JWT with real-time revocation, policy enforcement that defaults to deny.
+
+`JWT` `OPA/Rego` `RLS` `RE2` `Ed25519`
+
+</td>
+<td width="50%" valign="top">
+
+**Mobile & offline-first**<br>
+Flutter apps that work without internet, queue locally, and sync without duplicating data on reconnect.
+
+`Flutter` `Dart` `SharedPreferences` `Riverpod`
+
+</td>
+</tr></table>
+
+<img src="assets/divider.svg" width="100%" alt="">
+
+### Shipped
+
+---
+
+<table width="100%"><tr>
+<td valign="top">
+
+**01 &ensp; Kaar-e-Kamal** &ensp; <img src="assets/badge-shipped.svg" alt="SHIPPED" height="16">
+
+A welfare management platform that handles assistance cases across applicants, field workers, operations, and administrators. 
+
+**What I built:** I led the MVP and built the core system. Different roles get different workflows and access to the information they need, from initial submission to final delivery.
+
+**Engineering underneath:** The system uses a Go backend and PostgreSQL database to enforce business rules, with a Flutter mobile app for users. The backend owns authorization, using JWTs, PostgreSQL Row-Level Security, and a synchronized offline queue for field workers operating without internet.
+
+**Evidence:** 92.9% of the 170 commits across the repository are mine.
 
 <details>
-<summary><b>View Architecture & Implementation</b></summary>
-<br/>
+<summary>Technical depth</summary>
 
-- **L1 Firewall**: Uses the RE2 regex engine to inspect payloads for SQL injection and XSS patterns, returning a 403 instantly on a match.
-- **Deterministic Policy Enforcement**: Evaluates requests using Open Policy Agent (OPA) against strict RBAC rules.
-- **The Sealed Broker Pattern**: Retrieves secrets from a local cache and injects them into outbound requests, ensuring the AI agent never sees raw credentials.
-- **Cryptographic Receipts**: Every allowed action generates an Ed25519-signed, hash-chained audit trail persisted in PostgreSQL.
-- **Fail-Closed Design**: If the ONNX risk engine or any core component fails, the gateway defaults to DENY or ESCALATE.
+**Concurrency.** Case eligibility (one Rozgar grant per lifetime; one Rashan or Fees case active at a time per CNIC) is enforced via `pg_advisory_xact_lock(hashtext(cnic || "::" || case_type))` inside each insert transaction. Advisory locks were chosen deliberately over `SELECT FOR UPDATE` because they serialize only on the same CNIC+type without blocking unrelated inserts.
+
+**Idempotency.** Every case creation request carries a SHA-256 fingerprint of `userID + payload`. A Redis `SetNX` lock (24h TTL) ensures a resubmitted request returns `409 IDEMPOTENCY_KEY_REUSED` rather than creating a duplicate. A mid-retry network drop still cannot double-create a case.
+
+**Rate limiting.** Redis `TxPipeline` fixed-window counter with random TTL jitter (55s + 0–6s) prevents thundering-herd cache-stampede on key expiry. In-memory `golang.org/x/time/rate` token-bucket fallback if Redis goes down.
+
+**Scoring engine.** Admin submits a `map[string]bool` scorecard. The server rejects numeric or non-boolean types to block point-injection. It evaluates against dynamic, DB-configurable thresholds (`passing_score`, `manual_review_score`) set by Super Admin sliders — not hardcoded constants. Output: `approved`, `manual_review`, or `rejected`.
+
+**RBAC & RLS.** Middleware re-queries the `profiles` table on every request rather than trusting JWT claims alone. Role revocations take effect immediately. Row-Level Security is `FORCE`d across all 18 tables, and anonymous access is globally revoked.
+
+**Offline sync.** Field and Op workers queue verifications locally in `SharedPreferences` when offline. `SyncWorker` monitors connectivity and app lifecycle. On reconnect it runs a two-phase flush: upload binary evidence to Supabase Storage first, then submit the JSON payload with the original idempotency key, so a second network drop mid-retry still cannot duplicate the case.
+
+**Background daemons.** Three goroutines using `time.Ticker` + context cancellation: hourly auto-escalation, 30-second notification dispatcher (SMTP), 5-minute delivery-retry engine.
 
 </details>
 
-<br/>
+</td>
+</tr></table>
 
-### [Qualix](https://www.ahmadkaleem.tech/case/qualix) | Agentic Lead Qualification Pipeline
+---
 
-An automated lead qualification backend for WhatsApp, Instagram, and Telegram using Retrieval-Augmented Generation (RAG) and CRM tool-calling.
+<table width="100%"><tr>
+<td valign="top">
 
-**The Problem**
-Sales teams lose deals due to slow response times, and manual follow-up doesn't scale. Additionally, monolithic systems often drop leads entirely if a single step (like a CRM update) fails.
+**02 &ensp; Qualix** &ensp; <img src="assets/badge-shipped.svg" alt="SHIPPED" height="16">
+
+An AI sales and support system that helps businesses handle customer conversations and qualify leads across messaging apps like WhatsApp, Instagram, and Telegram.
+
+**What I built:** I built the retrieval system that connects conversations with business knowledge, and the background systems that allow agents to execute follow-ups.
+
+**Engineering underneath:** The system uses RAG, tool calling, and background task queues. Agents retrieve relevant business information at inference time and use controlled backend APIs to perform actions instead of only generating replies.
 
 <details>
-<summary><b>View Architecture & Implementation</b></summary>
-<br/>
+<summary>Technical depth</summary>
 
-- **Architecture**: Developed a backend in FastAPI with async SQLAlchemy and PostgreSQL 16.
-- **Decoupled Workflows**: LLM inferences and CRM writes fail independently. Utilized Redis 7 and Celery to separate these steps into reliable, independently retriable queues.
-- **RAG Implementation**: Integrated LangChain and ChromaDB to retrieve necessary business context locally rather than stuffing context windows, reducing cost and latency. 
-- **Dynamic Routing**: LLM requests route across OpenRouter, OpenAI, and Nvidia NIM based on cost and capability.
+**Retrieval.** Hybrid RAG using LangChain and ChromaDB to pull business context at inference time, so agents answer from live business data rather than stale training knowledge.
+
+**Background processing.** Celery workers handle follow-up scheduling. Celery Beat manages periodic tasks. Redis as the broker.
+
+**Multi-provider LLM.** Routes to OpenRouter, OpenAI, and Nvidia NIM depending on task requirements.
+
+**Testing.** PyTest suites covering API behavior, lead-qualification logic, RAG retrieval accuracy, and tool-calling flows. Ruff, MyPy, Bandit, and pip-audit as CI gates.
+
+**Stack.** Python 3.12, FastAPI, async SQLAlchemy 2.0, PostgreSQL 16 with PgBouncer, Redis 7, React 19 + Vite + TypeScript frontend, Next.js landing site.
 
 </details>
 
-<img src="./header-experience.svg?v=1" alt="Experience" />
+</td>
+</tr></table>
 
-### Demetronics (Private) Limited | Full Stack Engineer Intern
-*Aug 2026 – Sep 2026 | Islamabad, Pakistan*
-- Architected and executed a system-wide migration from direct client-to-database writes to a centralized Express.js REST API.
-- Implemented role-based access control (RBAC), Zod parameter validation, and an immutable audit logging system to secure IoT device actuations.
-- Audited the legacy codebase, remediating exposed production secrets and securing the CI/CD pipeline.
+---
 
-### Kaar-e-Kamal Welfare Foundation | Application Developer Intern
-*Jul 2026 – Aug 2026 | Islamabad, Pakistan*
-- Developed the MVP for a unified welfare-services platform serving multiple NGO roles (Admin, Field Worker, Beneficiary).
-- Built a modular Go backend (`net/http`) connected to Supabase PostgreSQL, featuring Redis rate-limiting and strict server-side role validation.
-- Engineered offline-first capabilities in Flutter, enabling field workers to cache case data locally and sync automatically upon network reconnection.
+<table width="100%"><tr>
+<td valign="top">
 
-<img src="./header-stack.svg?v=8" alt="Technical Focus" />
+**03 &ensp; Demetronics** &ensp; <sub>Full Stack Development Intern, Aug–Sep 2026</sub> &ensp; <img src="assets/badge-shipped.svg" alt="SHIPPED" height="16">
 
-### Systems & Orchestration
-LangChain, RAG, ChromaDB, ONNX, Tool Calling
+A smart water management IoT system connecting mobile controls, a web portal, and backend services. 
 
-### Backend & Infrastructure
-FastAPI, Python, Go, TypeScript, PostgreSQL, Redis, Celery, Docker
+**What I worked on:** My mandate was to move the device fleet from decentralized client-writes directly to a database, toward a centralized control model, and to fix security issues along the way.
 
-### Security & Identity
-Open Policy Agent (OPA), RBAC, mTLS, JWT, Vault
-
-<img src="./header-background.svg?v=8" alt="Engineering Approach" />
-
-- **Fail-Closed Execution**: Security systems must default to `ESCALATE` or `DENY`. If a risk model crashes, the fast path stops safely.
-- **Decoupled Failures**: External API writes and model inferences fail at different rates and require separate retry queues.
-- **Structural Enforcement**: Defending against prompt injections is a structural problem, not a prompt engineering problem. OPA policies evaluating structured JSON outrank probabilistic intent.
-
-<br/>
+**Engineering underneath:** Node.js, Express, MongoDB, and Firebase. Backend-side authorization controls mutations, with global audit logging and offline fallback mechanisms for device operations.
 
 <details>
-<summary><b>View Additional Projects</b></summary>
-<br/>
+<summary>Technical depth</summary>
 
-- **[PakLand](https://www.ahmadkaleem.tech/case/pakland)**: A Flutter real estate platform featuring a GPT-4o-Mini moderation pipeline that automatically expires stale listings and assigns Trust Scores to sellers, directly affecting their search ranking.
-- **[GradePilot](https://www.ahmadkaleem.tech/case/gradepilot)**: A Manifest V3 Chrome extension built in vanilla JavaScript that parses university DOM structures to simulate CGPA retake rules locally, distributed via WinGet.
+**Architecture shift.** Built an Express.js Portal API that stands between clients and Firebase Realtime DB. All device control, scheduling, and pairing now routes through the API rather than directly from the app.
+
+**Audit logging.** Every state-mutating action is captured to a MongoDB `audit_logs` collection via a global `audit.js` middleware.
+
+**Security work.** Audited the legacy codebase and found MongoDB URIs and JWT secrets committed in plaintext across several commits. Rotated the credentials and secured env-var management. Separately remediated unauthenticated e-commerce API routes and a CORS origin-reflection flaw.
+
+**Offline fallback.** When the cloud is unreachable the Flutter app pings the device's local ESP IP directly. Audit events generated during offline operation are queued via `sync_service.dart` and flushed on reconnect.
+
+**Note.** The recent codebase changes are in a local branch and not yet committed to the upstream Git repository.
 
 </details>
 
-<div align="center">
-  <img src="./header-contact.svg?v=11" alt="Contact" />
-</div>
+</td>
+</tr></table>
 
-<div align="center">
-  <a href="mailto:ahmadkaleeem1@gmail.com">
-    <img src="https://img.shields.io/badge/ahmadkaleeem1@gmail.com-DF6513?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  <a href="https://github.com/AhmaadKaleeem">
-    <img src="https://img.shields.io/badge/AhmaadKaleeem-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
-  </a>
-  <a href="https://linkedin.com/in/ahmadkaleembhatti">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="https://www.ahmadkaleem.tech">
-    <img src="https://img.shields.io/badge/Portfolio-000000?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio" />
-  </a>
-  <img src="https://img.shields.io/badge/Islamabad_Pakistan-059D00?style=flat-square&logo=googlemaps&logoColor=white" alt="Location" />
-</div>
+---
+
+<table width="100%"><tr>
+<td width="65%" valign="top">
+
+**04 &ensp; PakLand** &ensp; <sub>Academic Project</sub> &ensp; <img src="assets/badge-shipped.svg" alt="SHIPPED" height="16">
+
+A real-estate marketplace for Pakistan designed to solve the problem of fake ads, outdated prices, and unverified landlords.
+
+**What I built:** I built the trust infrastructure. This includes a 30-day automatic ad-expiry that forces active re-verification, and an automated text moderation pipeline that routes flagged content to human review. I also engineered a 0–100 Trust Score derived from verification status and reviews that directly affects search ranking.
+
+**Engineering underneath:** Flutter app backed by Firebase and Supabase. The moderation pipeline runs on n8n and GPT-4o-Mini.
+
+</td>
+</tr></table>
+
+---
+
+<table width="100%"><tr>
+<td width="65%" valign="top">
+
+**05 &ensp; QEC Auto-Filler** &ensp; <img src="assets/badge-shipped.svg" alt="SHIPPED" height="16">
+
+A browser extension that automatically fills and submits mandatory university course evaluation forms, saving students several minutes per subject.
+
+**Evidence:** Adopted by 1,000+ students within days of release.
+
+**Engineering underneath:** Built with JavaScript and Chrome Manifest V3. Features configurable default answers and an autonomous mode that loops through all subjects via DOM scraping.
+
+</td>
+</tr></table>
+
+---
+
+<table width="100%"><tr>
+<td width="65%" valign="top">
+
+**06 &ensp; GradePilot** &ensp; <img src="assets/badge-shipped.svg" alt="SHIPPED" height="16">
+
+A CGPA simulator that correctly applies the university's retake-replacement and non-credit rules, which the official student portal miscalculates.
+
+**What I built:** A browser extension featuring a target-CGPA solver, per-semester roadmap, retake-opportunity finder, and live what-if scenarios. 
+
+**Engineering underneath:** Vanilla ES6+ JavaScript modularized engine and SheetJS. Distributed via WinGet and an Inno Setup installer.
+
+</td>
+</tr></table>
+
+<img src="assets/divider.svg" width="100%" alt="">
+
+### Open source
+
+Two merged PRs to [`mahlernim/google-timeline-visualizer`](https://github.com/mahlernim/google-timeline-visualizer) (~2.6k★):
+
+**PR #132** — Fixed a completed-export notification staying in the Android notification drawer after the user acknowledged it in-app. Added `clearNotification` to `VideoExportService`, wired via `VideoExportCoordinator`. Shipped in v2.2.13.
+
+**PR #176 → adapted as #195** — Prototyped an incremental ghost-trail cache that kept older route points visible on long trips (>80km) instead of cutting off at the performance-driven render limit. The maintainer adapted the approach into their own PR (#195), crediting the incremental trail-caching idea, and merged it.
+
+<img src="assets/divider.svg" width="100%" alt="">
+
+### On the workbench
+
+<table width="100%"><tr>
+<td valign="top">
+
+**Actsurance** &ensp; <img src="assets/badge-building.svg" alt="BUILDING" height="16">
+
+An authorization gateway that sits between autonomous AI agents and target systems. AI agents acting on real systems—databases, payments, internal APIs—have almost no access control compared to what human-facing systems use.
+
+**What I'm building:** A system where the agent requests an action instead of holding credentials directly. A 10-step pipeline checks a firewall, evaluates policies, scores risk, and only executes if the request passes.
+
+**Engineering underneath:** Python, Go, and OPA/Rego. The system defaults to deny. If the policy engine, risk scorer, Redis, or PostgreSQL go offline, the request is denied. Credentials are injected locally at the perimeter so the agent never sees them.
+
+<details>
+<summary>Technical depth</summary>
+
+**Pipeline Flow:**
+```text
+Agent Request
+  → JWT Auth (RS256 + JWKS, Redis revocation)
+  → Idempotency & Rate Limiting (Redis)
+  → L1 Firewall (RE2 deep packet inspection: SQLi, XSS, path traversal)
+  → Authorization (OPA evaluating Rego policies, per-tenant RBAC)
+  → Risk Evaluation (ONNX Runtime, local inference — no external LLM call)
+  → Routing: ALLOW / DENY / ESCALATE
+  → Sealed Broker Execution (credentials injected at perimeter; agent never sees them)
+  → Receipt Generation (Ed25519 signed, SHA-256 hash-chained)
+  → Persistence (PostgreSQL, Redis cache)
+```
+
+**Fail-closed.** If OPA, ONNX, Redis, or PostgreSQL become unavailable, the answer is DENY. This is enforced in named ADRs, not just convention.
+
+**ESCALATE** is a first-class outcome with a real human-approval workflow, not just a fallback label.
+
+**Current implementation state:**
+- Fully implemented: OPA enforcement, sealed broker, Ed25519 crypto receipts, tamper-detection watchdog, human-approval workflow, L1 RE2 firewall, Python and Go SDKs.
+- Partial: ONNX risk-scoring engine (implemented, marked partial in audit).
+- Planned (Phase 2): Cedar policy backend, AWS Nitro hardware attestation.
+- Observability: Jaeger (OTel), Prometheus, Grafana.
+
+**Engineering Operating System (EOS):** The project includes an internal rule system. `AGENTS.md` forces any AI coding assistant through a context-bootstrap before it can touch the codebase. `GlobalEngineeringRules.md` is a constitutional rulebook with named principles (SEC-001 Least Privilege, REL-004 Graceful Degradation, AI-001 AI output must pass deterministic gates before deployment). 
+
+</details>
+
+</td>
+</tr></table>
+
+<img src="assets/divider.svg" width="100%" alt="">
+
+<sub>
+  <a href="mailto:ahmadkaleeem1@gmail.com">Email</a>
+  &ensp;·&ensp;
+  <a href="https://linkedin.com/in/ahmadkaleembhatti">LinkedIn</a>
+  &ensp;·&ensp;
+  <a href="https://www.ahmadkaleem.tech">ahmadkaleem.tech</a>
+</sub>
+
