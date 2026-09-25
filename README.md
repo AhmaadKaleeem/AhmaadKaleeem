@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="mailto:ahmadkaleeem1@gmail.com">ahmadkaleeem1@gmail.com</a>
+  <a href="mailto:ahmadkaleeem1@gmail.com">Email</a>
   &ensp;·&ensp;
   <a href="https://linkedin.com/in/ahmadkaleembhatti">LinkedIn</a>
   &ensp;·&ensp;
@@ -28,7 +28,7 @@
 <img src="assets/divider.svg" width="100%" alt="">
 <br>
 
-### What I build
+### Core Engineering
 
 <table width="100%"><tr>
 <td width="50%" valign="top">
@@ -77,30 +77,26 @@ Flutter apps that work without internet, queue locally, and sync without duplica
 
 **01 &ensp; Kaar-e-Kamal** &ensp; <img src="assets/badge-shipped.svg" alt="SHIPPED" height="16">
 
-A welfare management platform that handles assistance cases across applicants, field workers, operations, and administrators. 
+Kaar-e-Kamal is a welfare platform that manages assistance cases from application through verification and approval.
 
-**What I built:** I led the MVP and built the core system. Different roles get different workflows and access to the information they need, from initial submission to final delivery.
+I built the core product and led the transition from the initial MVP into a production system.
 
-**Engineering underneath:** The system uses a Go backend and PostgreSQL database to enforce business rules, with a Flutter mobile app for users. The backend owns authorization, using JWTs, PostgreSQL Row-Level Security, and a synchronized offline queue for field workers operating without internet.
-
-**Evidence:** 92.9% of the 170 commits across the repository are mine.
+The system gives applicants, field workers, operations staff, and administrators different workflows and access based on their role. Field workers can continue working when connectivity is limited and sync their work when they are back online. Built across a Flutter app and a Go backend.
 
 <details>
-<summary>Technical depth</summary>
+<summary>Engineering details</summary>
 
-**Concurrency.** Case eligibility (one Rozgar grant per lifetime; one Rashan or Fees case active at a time per CNIC) is enforced via `pg_advisory_xact_lock(hashtext(cnic || "::" || case_type))` inside each insert transaction. Advisory locks were chosen deliberately over `SELECT FOR UPDATE` because they serialize only on the same CNIC+type without blocking unrelated inserts.
+**Concurrency.** The system prevents duplicate case approvals by serializing requests based on the applicant's identity and case type, rather than locking unrelated operations.
 
-**Idempotency.** Every case creation request carries a SHA-256 fingerprint of `userID + payload`. A Redis `SetNX` lock (24h TTL) ensures a resubmitted request returns `409 IDEMPOTENCY_KEY_REUSED` rather than creating a duplicate. A mid-retry network drop still cannot double-create a case.
+**Idempotency.** Every request carries a unique fingerprint. If a network drop forces an automatic retry, the backend recognizes the fingerprint and prevents creating a duplicate record.
 
-**Rate limiting.** Redis `TxPipeline` fixed-window counter with random TTL jitter (55s + 0–6s) prevents thundering-herd cache-stampede on key expiry. In-memory `golang.org/x/time/rate` token-bucket fallback if Redis goes down.
+**Rate limiting.** Traffic is managed to prevent caching failures under sudden load spikes.
 
-**Scoring engine.** Admin submits a `map[string]bool` scorecard. The server rejects numeric or non-boolean types to block point-injection. It evaluates against dynamic, DB-configurable thresholds (`passing_score`, `manual_review_score`) set by Super Admin sliders — not hardcoded constants. Output: `approved`, `manual_review`, or `rejected`.
+**Scoring engine.** Administrators define the criteria for case approval. The system evaluates applications against these dynamic thresholds to decide if a case is approved, rejected, or flagged for manual review.
 
-**RBAC & RLS.** Middleware re-queries the `profiles` table on every request rather than trusting JWT claims alone. Role revocations take effect immediately. Row-Level Security is `FORCE`d across all 18 tables, and anonymous access is globally revoked.
+**Access control.** The backend verifies user roles on every request and can revoke access immediately. 
 
-**Offline sync.** Field and Op workers queue verifications locally in `SharedPreferences` when offline. `SyncWorker` monitors connectivity and app lifecycle. On reconnect it runs a two-phase flush: upload binary evidence to Supabase Storage first, then submit the JSON payload with the original idempotency key, so a second network drop mid-retry still cannot duplicate the case.
-
-**Background daemons.** Three goroutines using `time.Ticker` + context cancellation: hourly auto-escalation, 30-second notification dispatcher (SMTP), 5-minute delivery-retry engine.
+**Offline sync.** Field workers queue their verifications locally on their devices. When connectivity returns, a background worker safely uploads the evidence and data without creating duplicates.
 
 </details>
 
@@ -114,24 +110,20 @@ A welfare management platform that handles assistance cases across applicants, f
 
 **02 &ensp; Qualix** &ensp; <img src="assets/badge-shipped.svg" alt="SHIPPED" height="16">
 
-An AI sales and support system that helps businesses handle customer conversations and qualify leads across messaging apps like WhatsApp, Instagram, and Telegram.
+Qualix handles sales and support conversations while connecting them to business knowledge and application actions across messaging platforms.
 
-**What I built:** I built the retrieval system that connects conversations with business knowledge, and the background systems that allow agents to execute follow-ups.
+I built the system that connects customer conversations with business knowledge and actions.
 
-**Engineering underneath:** The system uses RAG, tool calling, and background task queues. Agents retrieve relevant business information at inference time and use controlled backend APIs to perform actions instead of only generating replies.
+The AI system retrieves relevant information and uses connected tools rather than only generating text. The backend manages the background queues necessary for agents to follow up on conversations asynchronously. Python and FastAPI power the backend.
 
 <details>
-<summary>Technical depth</summary>
+<summary>Engineering details</summary>
 
-**Retrieval.** Hybrid RAG using LangChain and ChromaDB to pull business context at inference time, so agents answer from live business data rather than stale training knowledge.
+**Retrieval.** The system pulls live business context so agents answer using current data rather than outdated training knowledge.
 
-**Background processing.** Celery workers handle follow-up scheduling. Celery Beat manages periodic tasks. Redis as the broker.
+**Background processing.** Dedicated workers handle follow-up scheduling and periodic tasks.
 
-**Multi-provider LLM.** Routes to OpenRouter, OpenAI, and Nvidia NIM depending on task requirements.
-
-**Testing.** PyTest suites covering API behavior, lead-qualification logic, RAG retrieval accuracy, and tool-calling flows. Ruff, MyPy, Bandit, and pip-audit as CI gates.
-
-**Stack.** Python 3.12, FastAPI, async SQLAlchemy 2.0, PostgreSQL 16 with PgBouncer, Redis 7, React 19 + Vite + TypeScript frontend, Next.js landing site.
+**Model routing.** The application routes tasks to different language models based on the specific requirements of each task.
 
 </details>
 
@@ -145,24 +137,20 @@ An AI sales and support system that helps businesses handle customer conversatio
 
 **03 &ensp; Demetronics** &ensp; <sub>Full Stack Development Intern, Aug–Sep 2026</sub> &ensp; <img src="assets/badge-shipped.svg" alt="SHIPPED" height="16">
 
-A smart water management IoT system connecting mobile controls, a web portal, and backend services. 
+Demetronics connects an IoT water-management system with mobile and web interfaces. 
 
-**What I worked on:** My mandate was to move the device fleet from decentralized client-writes directly to a database, toward a centralized control model, and to fix security issues along the way.
+I worked across the application and backend, including the controls that govern device operations. I led the effort to move device control from decentralized mobile apps to a centralized backend.
 
-**Engineering underneath:** Node.js, Express, MongoDB, and Firebase. Backend-side authorization controls mutations, with global audit logging and offline fallback mechanisms for device operations.
+The new architecture requires all device control and scheduling to pass through an API, which enforces authorization and creates an audit trail for every action. Node.js and Express power the backend.
 
 <details>
-<summary>Technical depth</summary>
+<summary>Engineering details</summary>
 
-**Architecture shift.** Built an Express.js Portal API that stands between clients and Firebase Realtime DB. All device control, scheduling, and pairing now routes through the API rather than directly from the app.
+**Architecture shift.** Replaced direct device writes with a centralized API. This allowed the system to enforce rules before any device state changes.
 
-**Audit logging.** Every state-mutating action is captured to a MongoDB `audit_logs` collection via a global `audit.js` middleware.
+**Audit logging.** Every action that changes the state of a device is captured to a central database.
 
-**Security work.** Audited the legacy codebase and found MongoDB URIs and JWT secrets committed in plaintext across several commits. Rotated the credentials and secured env-var management. Separately remediated unauthenticated e-commerce API routes and a CORS origin-reflection flaw.
-
-**Offline fallback.** When the cloud is unreachable the Flutter app pings the device's local ESP IP directly. Audit events generated during offline operation are queued via `sync_service.dart` and flushed on reconnect.
-
-**Note.** The recent codebase changes are in a local branch and not yet committed to the upstream Git repository.
+**Offline fallback.** When the cloud is unreachable, the mobile app communicates directly with the local hardware and queues the audit events to sync later.
 
 </details>
 
@@ -176,11 +164,11 @@ A smart water management IoT system connecting mobile controls, a web portal, an
 
 **04 &ensp; PakLand** &ensp; <sub>Academic Project</sub> &ensp; <img src="assets/badge-shipped.svg" alt="SHIPPED" height="16">
 
-A real-estate marketplace for Pakistan designed to solve the problem of fake ads, outdated prices, and unverified landlords.
+PakLand is a real-estate marketplace designed to address fake listings and unverified landlords.
 
-**What I built:** I built the trust infrastructure. This includes a 30-day automatic ad-expiry that forces active re-verification, and an automated text moderation pipeline that routes flagged content to human review. I also engineered a 0–100 Trust Score derived from verification status and reviews that directly affects search ranking.
+I built the trust infrastructure that forces listings to stay current and moderates the content.
 
-**Engineering underneath:** Flutter app backed by Firebase and Supabase. The moderation pipeline runs on n8n and GPT-4o-Mini.
+The system automatically expires older listings to force active re-verification. An automated pipeline routes flagged text to human review. The platform also calculates a trust score based on verification status to determine search ranking. Built with Flutter and Firebase.
 
 </td>
 </tr></table>
@@ -192,11 +180,11 @@ A real-estate marketplace for Pakistan designed to solve the problem of fake ads
 
 **05 &ensp; QEC Auto-Filler** &ensp; <img src="assets/badge-shipped.svg" alt="SHIPPED" height="16">
 
-A browser extension that automatically fills and submits mandatory university course evaluation forms, saving students several minutes per subject.
+A browser extension that automatically fills and submits mandatory university course evaluation forms.
 
-**Evidence:** Adopted by 1,000+ students within days of release.
+Used by 1,000+ students within days of release, reducing a multi-minute repetitive process to a single click.
 
-**Engineering underneath:** Built with JavaScript and Chrome Manifest V3. Features configurable default answers and an autonomous mode that loops through all subjects via DOM scraping.
+The extension loops through all subjects autonomously using configurable default answers. Built with JavaScript.
 
 </td>
 </tr></table>
@@ -208,11 +196,11 @@ A browser extension that automatically fills and submits mandatory university co
 
 **06 &ensp; GradePilot** &ensp; <img src="assets/badge-shipped.svg" alt="SHIPPED" height="16">
 
-A CGPA simulator that correctly applies the university's retake-replacement and non-credit rules, which the official student portal miscalculates.
+GradePilot is a grade simulator that applies university retake rules accurately when the official portal fails to do so.
 
-**What I built:** A browser extension featuring a target-CGPA solver, per-semester roadmap, retake-opportunity finder, and live what-if scenarios. 
+I built the extension to calculate target requirements and map out semester roadmaps.
 
-**Engineering underneath:** Vanilla ES6+ JavaScript modularized engine and SheetJS. Distributed via WinGet and an Inno Setup installer.
+The engine handles non-credit logic and live what-if scenarios entirely in the browser. Built with JavaScript.
 
 </td>
 </tr></table>
@@ -221,11 +209,9 @@ A CGPA simulator that correctly applies the university's retake-replacement and 
 
 ### Open source
 
-Two merged PRs to [`mahlernim/google-timeline-visualizer`](https://github.com/mahlernim/google-timeline-visualizer) (~2.6k★):
+**mahlernim/google-timeline-visualizer** (~2.6k★)
 
-**PR #132** — Fixed a completed-export notification staying in the Android notification drawer after the user acknowledged it in-app. Added `clearNotification` to `VideoExportService`, wired via `VideoExportCoordinator`. Shipped in v2.2.13.
-
-**PR #176 → adapted as #195** — Prototyped an incremental ghost-trail cache that kept older route points visible on long trips (>80km) instead of cutting off at the performance-driven render limit. The maintainer adapted the approach into their own PR (#195), crediting the incremental trail-caching idea, and merged it.
+I contributed two merged pull requests. I fixed a persistent notification state issue on Android by wiring the cleanup function through the application services. I also prototyped an incremental caching approach that keeps older route points visible on long trips without degrading render performance.
 
 <img src="assets/divider.svg" width="100%" alt="">
 
@@ -236,40 +222,22 @@ Two merged PRs to [`mahlernim/google-timeline-visualizer`](https://github.com/ma
 
 **Actsurance** &ensp; <img src="assets/badge-building.svg" alt="BUILDING" height="16">
 
-An authorization gateway that sits between autonomous AI agents and target systems. AI agents acting on real systems—databases, payments, internal APIs—have almost no access control compared to what human-facing systems use.
+Actsurance is an authorization gateway that sits between autonomous AI agents and target systems. AI agents acting on real systems currently have almost no access control compared to human-facing applications.
 
-**What I'm building:** A system where the agent requests an action instead of holding credentials directly. A 10-step pipeline checks a firewall, evaluates policies, scores risk, and only executes if the request passes.
+I am building the gateway that intercepts agent requests, evaluates them against policies, and executes them securely.
 
-**Engineering underneath:** Python, Go, and OPA/Rego. The system defaults to deny. If the policy engine, risk scorer, Redis, or PostgreSQL go offline, the request is denied. Credentials are injected locally at the perimeter so the agent never sees them.
+The system forces agents to request actions rather than holding credentials directly. A multi-step pipeline evaluates the request against rules and risk models, defaulting to deny if any service is unavailable. Python and Go power the core services.
 
 <details>
-<summary>Technical depth</summary>
+<summary>Engineering details</summary>
 
-**Pipeline Flow:**
-```text
-Agent Request
-  → JWT Auth (RS256 + JWKS, Redis revocation)
-  → Idempotency & Rate Limiting (Redis)
-  → L1 Firewall (RE2 deep packet inspection: SQLi, XSS, path traversal)
-  → Authorization (OPA evaluating Rego policies, per-tenant RBAC)
-  → Risk Evaluation (ONNX Runtime, local inference — no external LLM call)
-  → Routing: ALLOW / DENY / ESCALATE
-  → Sealed Broker Execution (credentials injected at perimeter; agent never sees them)
-  → Receipt Generation (Ed25519 signed, SHA-256 hash-chained)
-  → Persistence (PostgreSQL, Redis cache)
-```
+**Pipeline Flow.** Every request passes through authentication, rate limiting, a firewall, policy evaluation, and risk scoring before it can be executed by a sealed broker.
 
-**Fail-closed.** If OPA, ONNX, Redis, or PostgreSQL become unavailable, the answer is DENY. This is enforced in named ADRs, not just convention.
+**Fail-closed design.** If the policy engine, risk scorer, or database go offline, the system denies the request to prevent unauthorized actions.
 
-**ESCALATE** is a first-class outcome with a real human-approval workflow, not just a fallback label.
+**Human escalation.** The system can explicitly route high-risk requests to a human for approval before execution.
 
-**Current implementation state:**
-- Fully implemented: OPA enforcement, sealed broker, Ed25519 crypto receipts, tamper-detection watchdog, human-approval workflow, L1 RE2 firewall, Python and Go SDKs.
-- Partial: ONNX risk-scoring engine (implemented, marked partial in audit).
-- Planned (Phase 2): Cedar policy backend, AWS Nitro hardware attestation.
-- Observability: Jaeger (OTel), Prometheus, Grafana.
-
-**Engineering Operating System (EOS):** The project includes an internal rule system. `AGENTS.md` forces any AI coding assistant through a context-bootstrap before it can touch the codebase. `GlobalEngineeringRules.md` is a constitutional rulebook with named principles (SEC-001 Least Privilege, REL-004 Graceful Degradation, AI-001 AI output must pass deterministic gates before deployment). 
+**Credential isolation.** Credentials for the target systems are injected locally at the execution step so the AI agent never sees them.
 
 </details>
 
@@ -285,4 +253,3 @@ Agent Request
   &ensp;·&ensp;
   <a href="https://www.ahmadkaleem.tech">ahmadkaleem.tech</a>
 </sub>
-
