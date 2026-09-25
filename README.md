@@ -211,7 +211,7 @@ The engine handles non-credit logic and live what-if scenarios entirely in the b
 
 **[mahlernim/google-timeline-visualizer](https://github.com/mahlernim/google-timeline-visualizer)** (~2.6k★)
 
-I contributed two merged pull requests ([#132](https://github.com/mahlernim/google-timeline-visualizer/pull/132), [#195](https://github.com/mahlernim/google-timeline-visualizer/pull/195)). I fixed a persistent notification state issue on Android by wiring the cleanup function through the application services. I also prototyped an incremental caching approach that keeps older route points visible on long trips without degrading render performance.
+Contributed stability and performance improvements to the core application ([#132](https://github.com/mahlernim/google-timeline-visualizer/pull/132), [#195](https://github.com/mahlernim/google-timeline-visualizer/pull/195)). Fixed a persistent Android notification leak by properly routing lifecycle cleanup through the application services. Prototyped an incremental caching strategy that preserves historical route points during long trips without sacrificing render performance.
 
 <img src="assets/divider.svg" width="100%" alt="">
 
