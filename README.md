@@ -28,13 +28,7 @@
 
 <br>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/main/profile-3d-contrib/profile-night-green.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/main/profile-3d-contrib/profile-green-animate.svg">
-  <img alt="GitHub 3D Contribution Calendar" src="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/main/profile-3d-contrib/profile-night-green.svg" width="100%">
-</picture>
 
-<br>
 
 <picture>
   <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/output/snake-dark.svg">
@@ -263,6 +257,16 @@ The system forces agents to request actions rather than holding credentials dire
 </tr></table>
 
 <img src="assets/divider.svg" width="100%" alt="">
+
+<br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/main/profile-3d-contrib/profile-night-green.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/main/profile-3d-contrib/profile-green-animate.svg">
+  <img alt="GitHub 3D Contribution Calendar" src="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/main/profile-3d-contrib/profile-night-green.svg" width="100%">
+</picture>
+
+<br>
 
 <p align="center">
   <a href="mailto:ahmadkaleeem1@gmail.com"><img src="assets/link-email.svg" alt="Email"></a>
