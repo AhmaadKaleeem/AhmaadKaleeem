@@ -10,11 +10,23 @@ inputs:
   github_user_name:
     description: "github user name"
     required: true
+  outputs:
+    description: "list of files to generate. one file per line"
+    required: false
+  github_token:
+    description: "github token"
+    required: false
   svg_out_path:
     description: "path of the generated svg file. If left empty, the svg file will not be generated."
+    required: false
+    default: null
+  gif_out_path:
+    description: "path of the generated gif file. If left empty, the gif file will not be generated."
     required: false
     default: null
 
 outputs:
   svg_out_path:
     description: "path of the generated svg"
+  gif_out_path:
+    description: "path of the generated gif"
