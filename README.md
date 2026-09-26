@@ -277,9 +277,6 @@ The system forces agents to request actions rather than holding credentials dire
 </p>
 
 <div align="center">
-  <b>Ahmad Kaleem Bhatti</b><br>
-  AI Engineer & Backend Engineer<br>
-  Islamabad, Pakistan<br>
-  Website: <a href="https://www.ahmadkaleem.tech/">https://www.ahmadkaleem.tech/</a><br>
-  LinkedIn: <a href="https://www.linkedin.com/in/ahmadkaleembhatti/">https://www.linkedin.com/in/ahmadkaleembhatti/</a>
+  <b>Ahmad Kaleem Bhatti</b> • AI Engineer • Islamabad, Pakistan<br>
+  <a href="https://www.ahmadkaleem.tech/">ahmadkaleem.tech</a> • <a href="https://www.linkedin.com/in/ahmadkaleembhatti/">LinkedIn</a>
 </div>
