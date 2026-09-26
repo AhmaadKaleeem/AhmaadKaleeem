@@ -18,6 +18,24 @@
 
 <br>
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=AhmaadKaleeem&theme=dark&hide_border=true&background=0D1117&ring=FF6B00&fire=FF6B00">
+    <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=AhmaadKaleeem&theme=default&hide_border=true&background=F6F8FA&ring=FF6B00&fire=FF6B00">
+    <img alt="GitHub Streak" src="https://streak-stats.demolab.com/?user=AhmaadKaleeem&theme=dark&hide_border=true&background=0D1117&ring=FF6B00&fire=FF6B00">
+  </picture>
+</p>
+
+<br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/main/profile-3d-contrib/profile-night-green.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/main/profile-3d-contrib/profile-green-animate.svg">
+  <img alt="GitHub 3D Contribution Calendar" src="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/main/profile-3d-contrib/profile-night-green.svg" width="100%">
+</picture>
+
+<br>
+
 <picture>
   <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/output/snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AhmaadKaleeem/AhmaadKaleeem/output/snake-light.svg">
