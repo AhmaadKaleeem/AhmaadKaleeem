@@ -20,9 +20,7 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=AhmaadKaleeem&theme=dark&hide_border=true&background=0D1117&ring=FF6B00&fire=FF6B00">
-    <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=AhmaadKaleeem&theme=default&hide_border=true&background=F6F8FA&ring=FF6B00&fire=FF6B00">
-    <img alt="GitHub Streak" src="https://streak-stats.demolab.com/?user=AhmaadKaleeem&theme=dark&hide_border=true&background=0D1117&ring=FF6B00&fire=FF6B00">
+    <img alt="GitHub Streak" src="./streak.svg">
   </picture>
 </p>
 
