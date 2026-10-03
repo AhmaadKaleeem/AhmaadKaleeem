@@ -20,7 +20,9 @@
 
 <p align="center">
   <picture>
-    <img alt="GitHub Streak" src="./streak.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="./streak-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./streak-light.svg">
+    <img alt="GitHub Streak" src="./streak-dark.svg">
   </picture>
 </p>
 

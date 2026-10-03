@@ -31,18 +31,25 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: python generate_svgs.py 
 
-      - name: Generate streak stats
+      - name: Generate streak stats (Dark)
         uses: DenverCoder1/github-readme-streak-stats@main
         with:
-          options: user=AhmaadKaleeem&theme=dark&background=000000&ring=DF6513&fire=DF6513&currStreakNum=059D00&currStreakLabel=DF6513&sideNums=FFFFFF&sideLabels=FFFFFF&dates=FFFFFF&hide_border=true
-          path: streak.svg
+          options: user=AhmaadKaleeem&theme=dark&hide_border=true&background=0D1117&ring=FF6B00&fire=FF6B00
+          path: streak-dark.svg
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Generate streak stats (Light)
+        uses: DenverCoder1/github-readme-streak-stats@main
+        with:
+          options: user=AhmaadKaleeem&theme=default&hide_border=true&background=F6F8FA&ring=FF6B00&fire=FF6B00
+          path: streak-light.svg
           token: ${{ secrets.GH_TOKEN }}
 
       - name: Commit and Push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add assets/ streak.svg
+          git add assets/ streak-dark.svg streak-light.svg
           git diff-index --quiet HEAD || git commit -m "Auto-update profile graphics"
           git pull --rebase
           git push
